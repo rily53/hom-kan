@@ -1,0 +1,60 @@
+<div class="form-main">
+  <div class="form-wrapper">
+    <h1>Sign Up</h1>
+
+  <%# <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
+
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="form-item">
+        <%= f.label :name %><br />
+        <%= f.text_field :name, autofocus: true %>
+      </div>
+
+      <div class="form-item">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <div class="form-item">
+        <%= f.label :password %>
+          <div class="attention">
+            <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters or more including letters and numbers)</em>
+            <% end %><br />
+          </div>
+        <%= f.password_field :password, autocomplete: "off" %>
+      </div>
+
+      <div class="form-item">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      </div>
+
+      <div class="button-panel">
+        <%= f.submit "Sign Up", class: "button" %>
+      </div>
+
+  <% end %>
+
+  <div class="go-link" >
+  <%= render "devise/shared/links" %>
+  </div>
+
+  </div>
+</div>
+
+      <%# <label for="email"></label>
+      <%# <input type="email" name="email" required="required" placeholder="Email Address"></input> %>
+    <%# </div> %>
+
+    <%# <div class="form-item"> %>
+      <%# <label for="password"></label> %>
+      <%# <input type="password" name="password" required="required" placeholder="Password"></input> %>
+    <%# </div> %>
+
+  <%# <div class="form-footer"> %>
+    <%# <p><a href="#">Create an account</a></p> %>
+    <%# <p><a href="#">Forgot password?</a></p> %>
+  <%# </div> %>
