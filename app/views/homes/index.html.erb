@@ -1,2 +1,14 @@
-<h1>Homes#index</h1>
-<p>Find me in app/views/homes/index.html.erb</p>
+
+<div class="navi">
+  <ul class="navi-left">
+    <% if user_signed_in? %>
+      <li><%= link_to "#{current_user.name}'s HOME", homes_index_path %></li>
+    <% end %>
+  </ul>
+    <li class="navi-right">
+      <li><%= link_to 'マイページ', "/users/#{current_user.id}" %></li>
+      <li><%= link_to 'サインアウト', destroy_user_session_path, method: :delete %></li>
+  <ul>
+
+  </ul>
+</div>
