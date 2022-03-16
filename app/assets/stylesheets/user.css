@@ -18,7 +18,7 @@ body {
 }
 
 /* Form Layout */
-.main {
+.form-main {
   background: #e9e9e9;
   height: 100vh;
   padding-top: 1px;
@@ -106,4 +106,8 @@ form {
   font-size: 0.7em;
   text-align: center;
   padding: 7px;
+}
+
+.attention {
+  font-size: 0.8em;
 }

@@ -1,4 +1,4 @@
-<div class="main">
+<div class="form-main">
   <div class="form-wrapper">
     <h1>Sign Up</h1>
 
@@ -19,9 +19,11 @@
 
       <div class="form-item">
         <%= f.label :password %>
-        <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
+          <div class="attention">
+            <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters or more including letters and numbers)</em>
+            <% end %><br />
+          </div>
         <%= f.password_field :password, autocomplete: "off" %>
       </div>
 
