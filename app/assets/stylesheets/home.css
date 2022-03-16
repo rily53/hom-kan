@@ -13,3 +13,20 @@
 .navi {
   background: skyblue;
 }
+
+
+.home-main{
+  background: #fff;
+  display: flex;
+  width: auto;
+  justify-content: center;
+}
+
+.home-left{
+  width: 50vh;
+}
+
+.home-right{
+  width: 50vh;
+
+}

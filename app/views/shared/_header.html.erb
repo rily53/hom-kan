@@ -1,0 +1,12 @@
+<div class="navi">
+  <ul class="navi-left">
+    <% if user_signed_in?  %>
+      <li><%= link_to "New HOME", new_home_path %></li>
+      <li><%= link_to "#{current_user.name}'s HOME", homes_index_path %></li>
+    <% end %>
+  </ul>
+  <ul class="navi-right">
+      <li><%= link_to 'マイページ', "/users/#{current_user.id}" %></li>
+      <li><%= link_to 'サインアウト', destroy_user_session_path, method: :delete %></li>
+  </ul>
+</div>

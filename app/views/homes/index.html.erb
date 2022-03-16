@@ -1,14 +1,39 @@
+<%= render "shared/header" %>
 
-<div class="navi">
-  <ul class="navi-left">
-    <% if user_signed_in? %>
-      <li><%= link_to "#{current_user.name}'s HOME", homes_index_path %></li>
-    <% end %>
-  </ul>
-    <li class="navi-right">
-      <li><%= link_to 'マイページ', "/users/#{current_user.id}" %></li>
-      <li><%= link_to 'サインアウト', destroy_user_session_path, method: :delete %></li>
-  <ul>
-
-  </ul>
+<div class="home-main">
+  <div class="home-left">
+    <div class="task-box">
+    タスク
+    </div>
+    
+    <div class="list-box">
+    リスト
+    </div>
+    
+    <div class="memo-box">
+    メモ
+    </div>
+    
+    <div class="info-box">
+    情報
+    </div>
+    
+    <div class="storehouse-box">
+    保管庫
+    </div>
+    
+    <div class="album-box">
+    アルバム
+    </div>
+  </div>
+  
+  <div class="home-right">
+    <div class="calendar">
+    カレンダー
+    </div>
+    
+    <div class="calendar-box">
+    カレンダーメモ
+    </div>
+  </div>
 </div>
