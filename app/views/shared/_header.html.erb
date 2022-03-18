@@ -12,27 +12,30 @@
 <%# </div> %>
 
 
-<div class="home-main">
- <div class="home-header">
+<%# <div class="home-main"> %>
+<div class="home-header">
   <div class="browse">
-   <div class="browse-category">
+    <div class="browse-category">
     Category
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
-     <path d="M6 9l6 6 6-6" /></svg>
-   </div>
-   <div class="search-bar">
+    <path d="M6 9l6 6 6-6" /></svg>
+    </div>
+  <div class="search-bar">
     <input type="text" placeholder="Search" />
-   </div>
+  </div>
   </div>
   <div class="header-title">
     <%= "#{current_user.name}'s HOME" %>
   </div>
+
+  <%= link_to 'サインアウト', destroy_user_session_path, method: :delete %>
+
   <div class="profile">
-   <div class="user-profile">My page</div>
-   <div class="profile-menu">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
-     <path d="M3 12h18M3 6h18M3 18h18" /></svg>
-    Menu
-   </div>
+  <div class="user-profile">My page</div>
+    <div class="profile-menu">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+      <path d="M3 12h18M3 6h18M3 18h18" /></svg>
+      Menu
+    </div>
   </div>
- </div>
+</div>
