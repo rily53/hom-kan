@@ -129,7 +129,7 @@ body {
   font-weight: 400;
   margin-right: 120px;
   text-decoration: none;
-
+  text-align: center;
 }
 
 .user-img {
@@ -857,3 +857,11 @@ body {
   /* color: #ffffff; */
   /* font-weight: 600; */
 /* } */
+
+
+
+/*
+Copyright (c) 2020 John Aysenur Turk @TurkAysenur
+Released under the MIT license
+http://opensource.org/licenses/mit-license.php
+*/

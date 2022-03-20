@@ -1,4 +1,38 @@
 <%= render "shared/header" %>
 
+<div class="form-main">
+  <div class="form-wrapper-hn">
+    <h1>New HOME</h1>
 
-新しいHOME
+  <%= form_with model: @home, locl: true do |f| %>
+
+    <%= render 'shared/error_messages', model: f.object %>
+
+    <div class="form-item">
+      <%= f.label :home_name, "Home Name" %>
+        <div class="attention">
+          <%= "Please set at least 5 characters including letters and numbers, and within 20 characters." %>
+        </div>
+      <%= f.text_field :home_name, autofocus: true %>
+    </div>
+
+    <select name="home[user_ids][]">
+      <option>ユーザー選択</option>
+      <% User.where.not(id: current_user.id).each do |user| %>
+        <option value=<%= user.id %>><%= user.name %></option>
+      <% end %>
+    </select>
+    <input name="home[user_ids][]" type="hidden" value=<%= current_user.id %>>
+
+    <div class="button-panel-hn">
+      <%= f.submit "Enter the room", class: "button-hn" %>
+    </div>
+
+<% end %>
+
+</div>
+</div>
+
+  <%# <div class="go-link" > %>
+  <%# <%= render "devise/shared/links" %> %>
+  <%# </div> %>

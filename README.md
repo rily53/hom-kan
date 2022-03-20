@@ -24,7 +24,7 @@
 
 | Column             | Type    | Options                   |
 | ------------------ | ------- | ------------------------- |
-| home_name          | string  | null: false               |
+| home_name          | string  | null: false, unique: true |
 
 ### Association
 
