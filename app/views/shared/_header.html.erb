@@ -16,7 +16,7 @@
 <div class="home-header">
   <div class="browse">
     <div class="browse-category">
-    Category
+      <%= link_to 'Category', new_home_path %>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
     <path d="M6 9l6 6 6-6" /></svg>
     </div>
@@ -25,10 +25,10 @@
   </div>
   </div>
   <div class="header-title">
-    <%= "#{current_user.name}'s HOME" %>
+    <%= link_to "#{current_user.name}'s HOME", root_path %>
   </div>
 
-  <%= link_to 'サインアウト', destroy_user_session_path, method: :delete %>
+  <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
 
   <div class="profile">
   <div class="user-profile">My page</div>
