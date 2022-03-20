@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
   get 'homes/index'
   root to: "homes#index"
+  devise_for :users
   resources :users, only: [:edit, :update, :show]
   resources :homes, only: [:new, :create]
   # get 'devise/sessions'
