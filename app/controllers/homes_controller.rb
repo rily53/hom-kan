@@ -2,7 +2,7 @@ class HomesController < ApplicationController
   
 
   def index
-    @home = Home.find(params[:id])
+    # @home = Home.find(params[:id])
   end
 
   def new
