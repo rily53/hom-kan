@@ -11,6 +11,11 @@
 * { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
 
 /* body */
+
+a:link, a:visited { color: #7c868e; }
+a:hover { color: #3f4570; font-weight: bolder; }
+a:active { color: #919eaa; font-weight: bolder; }
+
 .navi {
   background: skyblue;
   display: flex;
@@ -22,6 +27,11 @@
   width: 100vh;
   justify-content: center;
 }
+
+.hidden {
+  display: none;
+}
+
 
 
 /* codepen */
@@ -63,7 +73,7 @@ body {
   margin: 0;
 }
 
-.likes, .year-book, .author, .main-menu, .profile-menu, .profile, .browse-category, .browse, .home-header {
+.likes, .year-book, .author, .main-menu, .menus, .profile, .category, .browse, .home-header {
   display: flex;
   align-items: center;
 }
@@ -84,7 +94,7 @@ body {
   height: 70px;
   width: 100%;
   background-color: #F0F8FF;
-  padding: 0 30px;
+  padding: 0 20px;
   font-size: 14px;
   font-weight: 500;
   color: var(--body-color-light);
@@ -114,20 +124,35 @@ body {
   color: var(--placeholder);
 }
 
-.browse-category {
+.categories {
   border-right: 1px solid var(--border-color);
   white-space: nowrap;
+  padding: 20px 10px 20px 20px;
+  cursor: pointer;
 }
-.browse-category svg {
+.categories svg {
   width: 16px;
   margin: 2px 10px 0 8px;
+}
+
+.show-categories {
+  width: 150px;
+  position: absolute;
+  left: 20px;
+  top: 70px;
+  background-color: #dfedfc;
+}
+
+.pull-down-category {
+  padding: 15px 35px 15px 15px;
+  border: 1px solid #f5faff;
 }
 
 .header-title {
   color: #3d4954;
   font-size: 16px;
   font-weight: 400;
-  margin-right: 120px;
+  margin-right: 150px;
   text-decoration: none;
   text-align: center;
 }
@@ -146,18 +171,30 @@ body {
   margin-right: 15px;
 }
 
-.profile {
+.menus {
+  border-left: 1px solid var(--border-color);
+  padding: 20px 20px 20px 10px;
+  cursor: pointer;
   flex-shrink: 0;
 }
 
-.profile-menu {
-  border-left: 1px solid var(--border-color);
-}
-
-.profile svg {
+.menus svg {
   width: 16px;
   margin: 0 8px 0 15px;
   flex-shrink: 0;
+}
+
+.show-menus {
+  width: 150px;
+  position: absolute;
+  right: 20px;
+  top: 70px;
+  background-color: #dfedfc;
+}
+
+.pull-down-menu {
+  padding: 15px 35px 15px 15px;
+  border: 1px solid #f5faff;
 }
 
 .my-home {
@@ -644,7 +681,7 @@ body {
   }
 }
 @media (max-width: 725px) {
-  .browse-category, .search-bar {
+  .category, .search-bar {
     display: none;
   }
 
