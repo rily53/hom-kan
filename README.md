@@ -31,10 +31,8 @@ https://docs.google.com/spreadsheets/d/1IEPW0xlllfiEcg68vJW-rV9m6ZE4Z5_ifXg2_z00
 # 画面遷移図
 
 # 開発環境
-HTML
-CSS
-Ruby
-Ruby on Rails
-JavaScript
-GitHub
-
+* HTML
+* CSS
+* Ruby
+* Ruby on Rails
+* JavaScript
