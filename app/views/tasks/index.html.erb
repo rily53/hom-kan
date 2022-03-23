@@ -1,1 +1,4 @@
-＜タスク＞
+
+<%= group_ids = GroupUser.where(user_id: current_user.id).pluck(:group_id) %>
+<%= user_ids = groupUser.where(group_id in group_ids) %>
+<%= @tasks = Task.where(user_id: user_ids) %>

@@ -1,0 +1,12 @@
+<%= render "shared/header" %>
+
+<div>
+    <% current_user.homes.each do |home| %>
+    <%= link_to home.home_name, home_path(home) %>
+    <%# <%= link_to home.home_name, [@home_id] %> %>
+    <% end %>
+</div>
+
+  <div>
+  <%= link_to 'New HOME?', new_home_path %>
+  </div>

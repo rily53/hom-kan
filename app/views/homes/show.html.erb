@@ -41,7 +41,7 @@
 
 <%# <% @homes.each do |home| %>
     <%# <% @home_room.each do |home| %>
-    <%# <%= @home.home_name %> %>
+    <%# <%= @home.home_name %>
 
 <%# codepen %> 
 
@@ -64,7 +64,7 @@
       <%# <div class="tag-t">■タスク■</div> %>
       <div class="tag-lists">
         <%= link_to "タスク追加", "#" %>
-        <%# <%= link_to "task", new_home_task_path(home) %> %>
+        <%= link_to "task", new_home_task_path(@home) %>
       </div>
     </div>
   </div>

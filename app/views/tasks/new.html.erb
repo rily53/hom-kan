@@ -1,0 +1,66 @@
+<%= render "shared/header" %>
+
+<div class="form-main">
+  <div class="form-wrapper-hn">
+    <h1>New Task</h1>
+
+  <%= form_with model: [@home, @task], local: true do |f| %>
+
+    <%= render 'shared/error_messages', model: f.object %>
+
+    <div class="form-item">
+      <%= f.label :task, "Task" %>
+      <%= f.text_field :task, autofocus: true %>
+    </div>
+
+    <div class="form-item">
+      <%= f.label :deadline, "Deadline" %>
+      <%= f.date_field :deadline %>
+    </div>
+
+    <div class="form-item">
+      <%= f.label :responsible_person, "responsible_person" %>
+      <%= f.text_field :responsible_person %>
+    </div>
+
+    <%# <div class="form-item"> %>
+    <%# <select name="home[user_ids][]"> %>
+      <%# <option>responsible person</option> %>
+      <%# <% User.all.each do |user| %>
+        <%# <option value=<%= user.id %><%#= user.name</option> %>
+      <%# <% end %>
+    <%# </select> %>
+
+    <%# <div class="form-item"> %>
+      <%# <% f.collection_select(:status_id, Status.all, :id, :name, {}, {class:"select-box", id:"item-shipping-fee-status"}) %>
+        <%# <div class="weight-bold-text"> %>
+          <%# 担当 %>
+          <%# <span class="indispensable">必須</span> %>
+    <%# </div> %>
+
+    <input name="task[status_id]" type="hidden" value="1">
+
+    <div class="button-panel-hn">
+      <%= f.submit "Post", class: "button-hn" %>
+    </div>
+
+<% end %>
+
+</div>
+</div>
+
+
+
+
+<%# <div class="contents row"> %>
+  <%# <div class="container"> %>
+    <%# <h3>投稿する</h3> %>
+    <%#  %>
+      <%# <%= form.text_field :task, placeholder: "task" %>
+      <%# <%= form.text_field :, placeholder: "deadline" %>
+      <%# <%= form.text_area :text, placeholder: "text", rows: "10" %>
+      <%# <%= form.submit "SEND" %>
+    <%# <% end %>
+  <%# </div> %>
+<%# </div> %>
+<%#  %>
