@@ -63,8 +63,12 @@
     <div class="tag-content">
       <%# <div class="tag-t">■タスク■</div> %>
       <div class="tag-lists">
-        <%= link_to "タスク追加", "#" %>
-        <%= link_to "task", new_home_task_path(@home) %>
+        <%= link_to "Task New", new_home_task_path(@home) %>／<%= link_to "Task list", home_tasks_path(@home) %>
+          <% @tasks.each do |task| %>
+            <li class="post-lists">
+              【<%= task.deadline %>】 <%= task.task %> （ <%= task.responsible_person %> ）
+            </li>
+          <% end %>
       </div>
     </div>
   </div>

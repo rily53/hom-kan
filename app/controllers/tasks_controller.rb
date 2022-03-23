@@ -1,6 +1,8 @@
 class TasksController < ApplicationController
 
   def index
+    @home = Home.find_by(id: params[:home_id])
+    @tasks = Task.where(@home_id).all
     # @tasks = Task.find(params[:home_id])
     # @tasks = @home.tasks.includes(:user)
   end

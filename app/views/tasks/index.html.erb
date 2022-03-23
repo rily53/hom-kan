@@ -1,4 +1,10 @@
 
-<%= group_ids = GroupUser.where(user_id: current_user.id).pluck(:group_id) %>
-<%= user_ids = groupUser.where(group_id in group_ids) %>
-<%= @tasks = Task.where(user_id: user_ids) %>
+<%#= home_ids = HomeUser.where(user_id: current_user.id).pluck(:home_id) %>
+<%#= user_ids = homeUser.where(home_id in home_ids) %>
+<%#= @tasks = Task.where(user_id: user_ids) %>
+
+<% @tasks.each do |task| %>
+  <li class="post-lists">
+    【<%= task.deadline %>】 <%= task.task %> （ <%= task.responsible_person %> ）
+  </li>
+<% end %>

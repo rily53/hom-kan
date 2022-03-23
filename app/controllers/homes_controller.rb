@@ -26,11 +26,9 @@ class HomesController < ApplicationController
 
   def show
     @home = Home.find_by(id: params[:id])
-    # @home = Home.find(params[:home_id])
     if !@home.users.include?(current_user)
       @home.users << current_user
     end
-
     @tasks = Task.where(home_id: @home.id).all
   end
 
