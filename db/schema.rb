@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_16_070814) do
+ActiveRecord::Schema.define(version: 2022_03_21_015145) do
 
   create_table "home_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "home_id", null: false
@@ -27,6 +27,19 @@ ActiveRecord::Schema.define(version: 2022_03_16_070814) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "task", null: false
+    t.date "deadline", null: false
+    t.string "responsible_person", null: false
+    t.integer "status_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "home_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["home_id"], name: "index_tasks_on_home_id"
+    t.index ["user_id"], name: "index_tasks_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", default: "", null: false
     t.string "email", default: "", null: false
@@ -40,4 +53,6 @@ ActiveRecord::Schema.define(version: 2022_03_16_070814) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "tasks", "homes"
+  add_foreign_key "tasks", "users"
 end

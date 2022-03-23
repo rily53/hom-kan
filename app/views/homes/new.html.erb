@@ -9,7 +9,7 @@
     <%= render 'shared/error_messages', model: f.object %>
 
     <div class="form-item">
-      <%= f.label :home_name, "Home Name" %>
+      <%= f.label :home_name, "HOME Name" %>
         <div class="attention">
           <%= "Please set at least 5 characters including letters and numbers, and within 20 characters." %>
         </div>
@@ -17,7 +17,7 @@
     </div>
 
     <select name="home[user_ids][]">
-      <option>ユーザー選択</option>
+      <option>User selection</option>
       <% User.where.not(id: current_user.id).each do |user| %>
         <option value=<%= user.id %>><%= user.name %></option>
       <% end %>
@@ -32,7 +32,3 @@
 
 </div>
 </div>
-
-  <%# <div class="go-link" > %>
-  <%# <%= render "devise/shared/links" %> %>
-  <%# </div> %>

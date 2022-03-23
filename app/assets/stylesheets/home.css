@@ -171,13 +171,13 @@ body {
 }
 
 .home-left{
-  width: 70%;
+  width: 60vw;
   padding: 10px;
   margin-right: 10px;
 }
 
 .home-right{
-  width: 30%;
+  width: 40vw;
   padding: 10px;
   margin-left: 10px;
 }
@@ -205,7 +205,7 @@ body {
   display: flex;
   margin: 10px 10px 20px 10px;
   padding: 25px;
-  width: 70vw;
+  width: 60vw;
   height: 250px;
   /* margin-right: 1px; */
 }
@@ -294,7 +294,7 @@ body {
   font-size: 14px;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 10;
   -webkit-box-orient: vertical;
 }
 

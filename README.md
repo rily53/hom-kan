@@ -1,153 +1,40 @@
 # README
 
-## users テーブル
+# アプリケーション名
+Hom-Kan
 
-| Column             | Type    | Options                   |
-| ------------------ | ------- | ------------------------- |
-| name               | string  | null: false               |
-| email              | string  | null: false, unique: true |
-| encrypted_password | string  | null: false               |
+# アプリケーション概要
+家の中のタスクやスケジュール等を一元管理できるアプリケーション。
+保管庫には書類・写真を収納することができる。
 
-### Association
+# URL
+https://hom-kan.herokuapp.com/
 
-- has_many   :home_users
-- has_many   :homes, through: :home_users
-- has_many   :tasks
-- has_many   :lists
-- has_many   :memos
-- has_many   :calendar_memos
-- has_many   :informations
-- has_many   :storehouses
+# テスト用アカウント
 
+# 利用方法
 
-## homes テーブル
+# アプリケーションを作成した背景
+家族間の共有について悩みがあった。（忘れっぽい、面倒くさがり等で上手く共有ができない）
+普段はLINE等で連絡のやり取りをするが、メッセージは常に発生して、残しておきたい内容も流れてしまう問題があった。
+また、家の中の手紙や説明書等の書類が増え、探すのに時間がかかってしまう問題もあり、これらを1つのアプリで管理して問題を解決するために開発することにした。
 
-| Column             | Type    | Options                   |
-| ------------------ | ------- | ------------------------- |
-| home_name          | string  | null: false, unique: true |
+# 洗い出した要件
+https://docs.google.com/spreadsheets/d/1IEPW0xlllfiEcg68vJW-rV9m6ZE4Z5_ifXg2_z00AJs/edit?usp=sharing
 
-### Association
+# 実装した機能についての画像やGIFおよびその説明
 
-- has_many   :home_users
-- has_many   :users, through: :home_users
-- has_many   :tasks
-- has_many   :lists
-- has_many   :memos
-- has_many   :calendar_memos
-- has_many   :informations
-- has_many   :storehouses
+# 実装予定の機能
 
+# データベース設計
 
-## home_users テーブル
+# 画面遷移図
 
-| Column        | Type       | Options                        |
-| ------------- | ---------- | ------------------------------ |
-| user          | references | null: false, foreign_key: true |
-| home          | references | null: false, foreign_key: true |
+# 開発環境
+HTML
+CSS
+Ruby
+Ruby on Rails
+JavaScript
+GitHub
 
-### Association
-
-- belongs_to   :user
-- belongs_to   :home
-
-
-## tasks テーブル
-
-| Column                | Type       | Options                        |
-| --------------------- | ---------- | ------------------------------ |
-| task                  | string     | null: false                    |
-| deadline              | date       | null: false                    |
-| responsible_person_id | integer    | null: false                    |
-| status_id             | integer    | null: false                    |
-| user                  | references | null: false, foreign_key: true |
-| home                  | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to  :responsible_person
-- belongs_to  :status
-- belongs_to  :user
-- belongs_to  :home
-
-
-## lists テーブル
-
-| Column             | Type       | Options                        |
-| ------------------ | ---------- | ------------------------------ |
-| list               | string     | null: false                    |
-| importance_id      | integer    | null: false                    |
-| list_genre_id      | integer    | null: false                    |
-| status_id          | integer    | null: false                    |
-| user               | references | null: false, foreign_key: true |
-| home               | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to  :importance
-- belongs_to  :list_genre
-- belongs_to  :status
-- belongs_to  :user
-- belongs_to  :home
-
-
-## memos テーブル
-
-| Column             | Type       | Options                        |
-| ------------------ | ---------- | ------------------------------ |
-| memo               | text       | null: false                    |
-| status_id          | integer    | null: false                    |
-| user               | references | null: false, foreign_key: true |
-| home               | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to  :status
-- belongs_to  :user
-- belongs_to  :home
-
-
-## calendar_memos テーブル
-
-| Column             | Type       | Options                        |
-| ------------------ | ---------- | ------------------------------ |
-| date_text          | date       | null: false                    |
-| schedule           | text       | null: false                    |
-| user               | references | null: false, foreign_key: true |
-| home               | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to  :user
-- belongs_to  :home
-
-
-## informations デーブル
-
-| Column             | Type       | Options                        |
-| ------------------ | ---------- | ------------------------------ |
-| info               | string     | null: false                    |
-| info_memo          | text       | null: false                    |
-| user               | references | null: false, foreign_key: true |
-| home               | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to  :user
-- belongs_to  :home
-
-
-## storehouses テーブル
-
-| Column             | Type       | Options                        |
-| ------------------ | ---------- | ------------------------------ |
-| file_name          | string     | null: false                    |
-| file_genre         | integer    |                                |
-| file_memo          | string     |                                |
-| user               | references | null: false, foreign_key: true |
-| home               | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to  :list_genre
-- belongs_to  :user
-- belongs_to  :home
