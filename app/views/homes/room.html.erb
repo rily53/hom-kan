@@ -1,12 +1,22 @@
-<%= render "shared/header" %>
+<%= render "shared/header2" %>
 
-<div>
+<div class="form-main-rs">
+  <%# <div class="form-wrapper-rs"> %>
+
+  <div class="form-item-rs">
+
+  <%# <div class="button-panel-rs"> class: "button-rs"  %>
+  <%# <div class="borderless-b"> %>
     <% current_user.homes.each do |home| %>
-    <%= link_to home.home_name, home_path(home) %>
-    <%# <%= link_to home.home_name, [@home_id] %>
+    <%= link_to home.home_name, home_path(home), class: "link-rs" %>
     <% end %>
-</div>
+  <%# </div> %>
 
-  <div>
+  </div>
+
+  <div class="go-link">
   <%= link_to 'New HOME?', new_home_path %>
   </div>
+
+</div>
+<%# </div> %>
