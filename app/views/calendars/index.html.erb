@@ -3,7 +3,7 @@
 <%# <p id="notice"><%= notice %></p>
 
 <div class="calendar-toppage">
-<h1 class="calendar-top">Calendar</h1>
+  <h1 class="calendar-top">Calendar</h1>
 <br>
 
 <div class="row">
@@ -32,12 +32,12 @@
 
 <%= form_with model: [@home, @calendar], local: true do |form| %>
 
-  <div class="title">
+  <div class="c-title">
     <%= form.label :title, "Title*" %>
     <%= form.text_field :title %>
   </div>
 
-  <div class="content">
+  <div class="c-content">
     <%= form.label :schedule, "Schedule" %>
     <%= form.text_field :schedule %>
   </div>
@@ -72,13 +72,12 @@
  </div>
 
 <% end %>
-<%= "　* Required item" %>
+<%= "* Required item" %>
 </div>
 
 <br>
-
-
 <br>
+
 <div class="col-md-8">
 <%= month_calendar events: @calendars do |date, calendars| %>
   <%= date.day %>
