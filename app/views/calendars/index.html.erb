@@ -1,0 +1,94 @@
+<%= render "shared/header" %>
+
+<%# <p id="notice"><%= notice %></p>
+
+<div class="calendar-toppage">
+<h1 class="calendar-top">Calendar</h1>
+<br>
+
+<div class="row">
+<div class="col-md-4">
+	<div class="schedule">今後の予定一覧</div>
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th>タイトル</th>
+      <th>日程</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @calendars.each do |calendar| %>
+      <tr>
+        <td><%= link_to calendar.title, "#" %></td>
+        <td><%= calendar.start_time.strftime("%m-%d") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<br>
+
+<%= form_with model: [@home, @calendar], local: true do |form| %>
+
+  <div class="title">
+    <%= form.label :title, "Title*" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="content">
+    <%= form.label :schedule, "Schedule" %>
+    <%= form.text_field :schedule %>
+  </div>
+
+  <div class="content">
+    <%= form.label :schedule, "Member" %>
+    <%= form.text_field :member %>
+  </div>
+
+  <div class="time">
+    <%= form.label :start_time, "Start date*" %>
+    <%= form.date_select :start_date %>
+  </div>
+
+  <div class="time">
+    <%= form.label :start_time, "Start time" %>
+    <%= form.time_select :start_time %>
+  </div>
+
+  <div class="time">
+    <%= form.label :start_time, "End date" %>
+    <%= form.date_select :end_date %>
+  </div>
+
+  <div class="time">
+    <%= form.label :start_time, "End time" %>
+    <%= form.time_select :end_time %>
+  </div>
+
+ <div class="submit">
+    <%= form.submit %>
+ </div>
+
+<% end %>
+<%= "　* Required item" %>
+</div>
+
+<br>
+
+
+<br>
+<div class="col-md-8">
+<%= month_calendar events: @calendars do |date, calendars| %>
+  <%= date.day %>
+
+  <% calendars.each do |calendar| %>
+    <div>
+      <%= link_to calendar.title, "#" %>
+    </div>
+  <% end %>
+<% end %>
+</div>
+</div>
+</div>

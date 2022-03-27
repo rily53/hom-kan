@@ -1,0 +1,35 @@
+.calendar-toppage {
+  background-color: #fff;
+}
+.calendar-top {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.simple-calendar {
+  background-color: #fff;
+}
+.calendar-heading{
+  /* background-color: #fff; */
+}
+
+.day {}
+
+.wday-0 {}
+.wday-1 {}
+.wday-2 {}
+.wday-3 {}
+.wday-4 {}
+.wday-5 {}
+.wday-6 {}
+
+.today {}
+.past {}
+.future {}
+
+.start-date {}
+
+.prev-month {}
+.next-month {}
+.current-month {}
+
+.has-events {}
