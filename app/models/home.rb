@@ -8,6 +8,7 @@ class Home < ApplicationRecord
   has_many   :tasks
   has_many   :lists
   has_many   :memos
+  has_many   :calendars
   has_many   :calendar_memos
   has_many   :informations
   has_many   :storehouses
