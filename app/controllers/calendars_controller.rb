@@ -6,6 +6,9 @@ class CalendarsController < ApplicationController
     @calendar = current_user.calendars.new
   end
 
+  def show
+  end
+
   def new
     @calendar = current_user.calendar.new
     @home = Home.find_by(id: params[:home_id])
@@ -22,6 +25,14 @@ class CalendarsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
+  end
 
   private
 
