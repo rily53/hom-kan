@@ -7,6 +7,8 @@ class CalendarsController < ApplicationController
   end
 
   def show
+    @home = Home.find_by(id: params[:home_id])
+    @calendar = Calendar.find(params[:id])
   end
 
   def new
@@ -26,12 +28,18 @@ class CalendarsController < ApplicationController
   end
 
   def edit
+    @home = Home.find_by(id: params[:home_id])
+    @calendar = Calendar.find(params[:id])
   end
 
   def update
+    @home = Home.find_by(id: params[:home_id])
+    @calendar = Calendar.find(params[:id])
   end
 
   def destroy
+    @home = Home.find_by(id: params[:home_id])
+    @calendar = Calendar.find(params[:id])
   end
 
   private

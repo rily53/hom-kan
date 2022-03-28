@@ -1,0 +1,20 @@
+<div class="show">
+<p>
+  <strong>Title</strong>
+  <%= @calendar.title %>
+</p>
+
+<p>
+  <strong>Schedule</strong>
+  <%= @calendar.schedule %>
+</p>
+
+<p>
+  <strong>Start_date</strong>
+  <%= @calendar.start_date %>
+</p>
+
+<%= link_to 'edit', edit_blog_path(@calendar) %>
+<%= link_to 'delete',blog_path(@calendar.id), method: :delete, data: { confirm: '本当に?' } %>
+<%= link_to 'return', "#" %>
+</div>

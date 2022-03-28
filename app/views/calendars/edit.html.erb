@@ -1,0 +1,42 @@
+<%= form_with model: [@home, @calendar], local: true do |form| %>
+
+  <div class="title">
+    <div class="form-tag">Title</div>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="content">
+    <div class="form-tag">Schedule</div>
+    <%= form.text_area :schedule %>
+  </div>
+
+  <div class="content">
+    <div class="form-tag">Member</div>
+    <%= form.text_field :member %>
+  </div>
+
+  <div class="time">
+    <div class="form-tag">Start date</div>
+    <%= form.date_field :start_date %>
+  </div>
+
+  <div class="time">
+    <div class="form-tag">Start time</div>
+    <%= form.time_field :start_time %>
+  </div>
+
+  <div class="time">
+    <div class="form-tag">End date</div>
+    <%= form.date_field :end_date %>
+  </div>
+
+  <div class="time">
+    <div class="form-tag">End time</div>
+    <%= form.time_field :end_time %>
+  </div>
+
+  <div class="submit">
+    <%= form.submit %>
+  </div>
+
+<% end %>
