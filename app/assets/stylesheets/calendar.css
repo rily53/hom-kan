@@ -1,0 +1,83 @@
+.calendar-toppage {
+  background-color: #fff;
+}
+.calendar-top {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.simple-calendar {
+  background-color: #fff;
+}
+.calendar-heading{
+  /* background-color: #fff; */
+}
+
+.col-md-4 {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.form-wrapper-cl {
+  background: #fafafa;
+  margin: 0 10px;
+  padding: 20px;
+  width: 370px;
+}
+
+.schedule-list {
+  background-color: #fafafa;
+  margin: 0 10px;
+  padding: 20px;
+  width: 370px;
+}
+
+/* .c-title { */
+  /* margin-bottom: 0.75em; */
+  /* margin-top: 1em; */
+  /* width: 100%; */
+/* } */
+/*  */
+/*  */
+/* .c-title input { */
+  /* background: #fafafa; */
+  /* border: none; */
+  /* border-bottom: 2px solid #e9e9e9; */
+  /* color: #666; */
+  /* font-family: 'Open Sans', sans-serif; */
+  /* font-size: 1em; */
+  /* height: 50px; */
+  /* transition: border-color 0.3s; */
+  /* width: 100%; */
+/* } */
+/*  */
+/* .c-title input:focus { */
+  /* border-bottom: 2px solid #c0c0c0; */
+  /* outline: none; */
+/* } */
+
+.date-time {
+  display: flex;
+}
+
+.day {}
+
+.wday-0 {}
+.wday-1 {}
+.wday-2 {}
+.wday-3 {}
+.wday-4 {}
+.wday-5 {}
+.wday-6 {}
+
+.today {}
+.past {}
+.future {}
+
+.start-date {}
+
+.prev-month {}
+.next-month {}
+.current-month {}
+
+.has-events {}
+

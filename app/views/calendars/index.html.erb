@@ -1,0 +1,107 @@
+<%= render "shared/header" %>
+
+<div class="calendar-toppage">
+
+  <h1 class="calendar-top">Calendar</h1>
+<br>
+
+<div class="row">
+
+<div class="col-md-4">
+
+  <div class="form-wrapper-cl">
+
+    <%= form_with model: [@home, @calendar], local: true do |form| %>
+
+    <div class="c-title">
+      <%= form.label :title, "Title*" %><br>
+      <%= form.text_field :title, size: "35x10" %>
+    </div>
+  
+    <div class="c-content">
+      <%= form.label :schedule, "Schedule" %><br>
+      <%= form.text_area :schedule, size: "34x5" %>
+    </div>
+  
+    <div class="c-content">
+      <%= form.label :schedule, "Member" %><br>
+      <%= form.text_field :member, size: "35x10" %>
+    </div>
+  
+    <div class="date-time">
+      <div class="c-date">
+        <%= form.label :start_date, "Start date*" %>
+        <%= form.date_field :start_date %>
+      </div>
+  
+      <div class="c-time">
+        <%= form.label :start_time, "Start time" %>
+        <%= form.time_field :start_time %>
+      </div>
+    </div>
+  
+    <div class="date-time">
+      <div class="c-date">
+        <%= form.label :start_date, "End date" %>
+        <%= form.date_field :end_date %>
+      </div>
+    
+      <div class="c-time">
+        <%= form.label :start_time, "End time" %>
+        <%= form.time_field :end_time %>
+      </div>
+    </div>
+  
+<br>
+
+    <div class="submit">
+        <%= form.submit %>
+    </div>
+    <div>&emsp;* Required item</div>
+
+    <% end %>
+
+  </div>
+
+  
+  <div class="schedule-list">List of future plans
+<br>
+
+  <%# <table class="table"> %>
+  <%# <thead class="thead-light"> %>
+    <%# <tr> %>
+      <%# <th>タイトル</th> %>
+      <%# <th>日程</th> %>
+    <%# </tr> %>
+  <%# </thead> %>
+
+  <%# <tbody> %>
+    <% @calendars.each do |calendar| %>
+      <ul>
+        <li><%= calendar.start_date %> <%= link_to calendar.title, "#" %></li>
+      </ul>
+    <% end %>
+  <%# </tbody> %>
+<%# </table> %>
+</div>
+
+</div>
+
+</div>
+
+<br>
+<br>
+
+<div class="col-md-8">
+  <%= month_calendar events: @calendars do |date, calendars| %>
+    <%= date.day %>
+
+    <% calendars.each do |calendar| %>
+      <div>
+        <%= link_to calendar.title, "#" %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+</div>

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :users, only: [:edit, :update, :show]
   resources :homes, only: [:index, :new, :create, :show] do
     resources :tasks, only: [:index, :new, :create]
+    resources :calendars
     collection do
       get 'room'
     end
