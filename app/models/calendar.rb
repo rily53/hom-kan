@@ -11,4 +11,9 @@ class Calendar < ApplicationRecord
   belongs_to :user
   belongs_to :home
 
+  def start_time
+    self.start_date
+    # カレンダーにイベント表示
+  end
+
 end

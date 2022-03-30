@@ -10,8 +10,18 @@
 </p>
 
 <p>
-  <strong>Start_date</strong>
-  <%= @calendar.start_date %>
+  <strong>Member</strong>
+  <%= @calendar.member %>
+</p>
+
+<p>
+  <strong>Start</strong>
+  <%= @calendar.start_date %><%= @calendar.start_time %>
+</p>
+
+<p>
+  <strong>End</strong>
+  <%= @calendar.end_date %><%= @calendar.end_time %>
 </p>
 
 <%= link_to 'edit', "#" %>

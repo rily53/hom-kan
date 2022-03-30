@@ -78,7 +78,7 @@
   <%# <tbody> %>
     <% @calendars.each do |calendar| %>
       <ul>
-        <li><%= calendar.start_date %> <%= link_to calendar.title, "#" %></li>
+        <li><%= calendar.start_date %> <%= link_to calendar.title, home_calendar_path(@home,calendar.id) %></li>
       </ul>
     <% end %>
   <%# </tbody> %>
