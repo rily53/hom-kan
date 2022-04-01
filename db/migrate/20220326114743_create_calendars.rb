@@ -5,9 +5,9 @@ class CreateCalendars < ActiveRecord::Migration[6.0]
       t.text :schedule
       t.string :member
       t.date :start_date, null: false
-      t.time :start_time
+      t.time :s_time
       t.date :end_date
-      t.time :end_time
+      t.time :e_time
 
       t.references :user, null: false, foreign_key: true
       t.references :home, null: false, foreign_key: true

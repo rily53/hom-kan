@@ -4,11 +4,16 @@ class Calendar < ApplicationRecord
   validate :schedule
   validate :member
   validates :start_date, presence: true
-  validate :start_time
+  validate :s_time
   validate :end_date
-  validate :end_time
+  validate :e_time
 
   belongs_to :user
   belongs_to :home
+
+  def start_time
+    self.start_date
+    # カレンダーにイベント表示
+  end
 
 end

@@ -24,7 +24,7 @@
     </div>
   
     <div class="c-content">
-      <%= form.label :schedule, "Member" %><br>
+      <%= form.label :member, "Member" %><br>
       <%= form.text_field :member, size: "35x10" %>
     </div>
   
@@ -35,20 +35,20 @@
       </div>
   
       <div class="c-time">
-        <%= form.label :start_time, "Start time" %>
-        <%= form.time_field :start_time %>
+        <%= form.label :s_time, "Start time" %>
+        <%= form.time_field :s_time %>
       </div>
     </div>
   
     <div class="date-time">
       <div class="c-date">
-        <%= form.label :start_date, "End date" %>
+        <%= form.label :end_date, "End date" %>
         <%= form.date_field :end_date %>
       </div>
     
       <div class="c-time">
-        <%= form.label :start_time, "End time" %>
-        <%= form.time_field :end_time %>
+        <%= form.label :s_time, "End time" %>
+        <%= form.time_field :e_time %>
       </div>
     </div>
   
@@ -78,7 +78,7 @@
   <%# <tbody> %>
     <% @calendars.each do |calendar| %>
       <ul>
-        <li><%= calendar.start_date %> <%= link_to calendar.title, "#" %></li>
+        <li><%= calendar.start_date %> <%= link_to calendar.title, home_calendar_path(@home,calendar.id) %></li>
       </ul>
     <% end %>
   <%# </tbody> %>
@@ -98,7 +98,7 @@
 
     <% calendars.each do |calendar| %>
       <div>
-        <%= link_to calendar.title, "#" %>
+        <%= link_to calendar.title, home_calendar_path(@home,calendar.id) %>
       </div>
     <% end %>
   <% end %>
