@@ -1,5 +1,6 @@
 class CalendarsController < ApplicationController
-  before_action :set_item
+  before_action :set_home_find
+  before_action :set_calendar_find, only: [:show, :edit, :update, :destroy]
 
   def index
     @calendars = @home.calendars.order(start_date: :ASC).limit(10)
@@ -8,7 +9,6 @@ class CalendarsController < ApplicationController
   end
 
   def show
-    @calendar = Calendar.find(params[:id])
   end
 
   def new
@@ -29,15 +29,21 @@ class CalendarsController < ApplicationController
   end
 
   def edit
-    @calendar = Calendar.find(params[:id])
+    redirect_to root_path unless current_user.id == @calendar.user_id
   end
 
   def update
-    @calendar = Calendar.find(params[:id])
+    if @calendar.update(calendar_params)
+      redirect_to home_calendars_path(@home)
+    else
+      render :edit
+    end
   end
 
   def destroy
-    @calendar = Calendar.find(params[:id])
+    redirect_to root_path unless current_user.id == @calendar.user_id
+    @calendar.destroy
+    redirect_to home_calendars_path(@home)
   end
 
   private
@@ -46,11 +52,15 @@ class CalendarsController < ApplicationController
     params.require(:calendar).permit(:title, :schedule, :member, :start_date, :s_time, :end_date, :e_time).merge(user_id: current_user.id, home_id: params[:home_id])
   end
 
-  def set_item
+  def set_home_find
     # @home = Home.find_by(id: params[:home_id])
     # 調べたコード
     @home = Home.find(params[:home_id])
     # Homeテーブルからhome_idカラムを取得 "id"のみだとエラー
+  end
+
+  def set_calendar_find
+    @calendar = Calendar.find(params[:id])
   end
 
 end

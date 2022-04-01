@@ -1,42 +1,57 @@
+<%= render "shared/header" %>
+
+<div class="calendar-edit">
+<div class="form-wrapper-cl">
+
 <%= form_with model: [@home, @calendar], local: true do |form| %>
 
-  <div class="title">
-    <div class="form-tag">Title</div>
-    <%= form.text_field :title %>
+  <div class="c-title">
+    <%= form.label :title, "Title*" %><br>
+    <%= form.text_field :title, size: "35x10" %>
   </div>
 
-  <div class="content">
-    <div class="form-tag">Schedule</div>
-    <%= form.text_area :schedule %>
+  <div class="c-content">
+    <%= form.label :schedule, "Schedule" %><br>
+    <%= form.text_area :schedule, size: "34x5" %>
   </div>
 
-  <div class="content">
-    <div class="form-tag">Member</div>
-    <%= form.text_field :member %>
+  <div class="c-content">
+    <%= form.label :member, "Member" %><br>
+    <%= form.text_field :member, size: "35x10" %>
   </div>
 
-  <div class="time">
-    <div class="form-tag">Start date</div>
-    <%= form.date_field :start_date %>
+  <div class="date-time">
+    <div class="c-date">
+      <%= form.label :start_date, "Start date*" %>
+      <%= form.date_field :start_date %>
+    </div>
+
+    <div class="c-time">
+      <%= form.label :s_time, "Start time" %>
+      <%= form.time_field :s_time %>
+    </div>
   </div>
 
-  <div class="time">
-    <div class="form-tag">Start time</div>
-    <%= form.time_field :start_time %>
+  <div class="date-time">
+    <div class="c-date">
+      <%= form.label :end_date, "End date" %>
+      <%= form.date_field :end_date %>
+    </div>
+  
+    <div class="c-time">
+      <%= form.label :s_time, "End time" %>
+      <%= form.time_field :e_time %>
+    </div>
   </div>
 
-  <div class="time">
-    <div class="form-tag">End date</div>
-    <%= form.date_field :end_date %>
-  </div>
-
-  <div class="time">
-    <div class="form-tag">End time</div>
-    <%= form.time_field :end_time %>
-  </div>
+<br>
 
   <div class="submit">
     <%= form.submit %>
   </div>
+  <div>&emsp;* Required item</div>
 
 <% end %>
+
+</div>
+</div>
