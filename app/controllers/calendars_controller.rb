@@ -43,7 +43,7 @@ class CalendarsController < ApplicationController
   private
 
   def calendar_params
-    params.require(:calendar).permit(:title, :schedule, :member, :start_date, :start_time, :end_date, :end_time).merge(user_id: current_user.id, home_id: params[:home_id])
+    params.require(:calendar).permit(:title, :schedule, :member, :start_date, :s_time, :end_date, :e_time).merge(user_id: current_user.id, home_id: params[:home_id])
   end
 
   def set_item

@@ -17,9 +17,9 @@ ActiveRecord::Schema.define(version: 2022_03_26_114743) do
     t.text "schedule"
     t.string "member"
     t.date "start_date", null: false
-    t.time "start_time"
+    t.time "s_time"
     t.date "end_date"
-    t.time "end_time"
+    t.time "e_time"
     t.bigint "user_id", null: false
     t.bigint "home_id", null: false
     t.datetime "created_at", precision: 6, null: false
