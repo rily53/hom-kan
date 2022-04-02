@@ -9,7 +9,8 @@
   background-color: #fff;
 }
 .calendar-heading{
-  /* background-color: #fff; */
+  font-size: 1rem;
+  padding: 0 0 5px 20px;
 }
 
 .col-md-4 {
@@ -20,16 +21,17 @@
 .form-wrapper-cl {
   background: #fafafa;
   margin: 0 10px;
-  padding: 20px;
+  padding: 30px;
   width: 370px;
 }
 
 .schedule-list {
   background-color: #fafafa;
   margin: 0 10px;
-  padding: 20px;
+  padding: 30px;
   width: 370px;
 }
+
 
 /* .c-title { */
   /* margin-bottom: 0.75em; */
@@ -73,13 +75,17 @@
 .past {}
 .future {}
 
-.start-date {}
+.start-date {
+  /* background-color: aquamarine; */
+}
 
 .prev-month {}
 .next-month {}
 .current-month {}
 
-.has-events {}
+.has-events {
+  /* background-color: aquamarine; */
+}
 
 .calendar-show, .calendar-edit {
   background-color: #fff;
@@ -93,11 +99,48 @@
 table {
   border-collapse: collapse;
   /* セルの線を重ねる */
-  background-color: #fafafa;
+  background-color: #ffffff;
   width: 350px;
+}
+
+th {
+  font-weight: 600;
+  text-align: center;
+  background-color: rgb(231, 238, 255);
 }
 
 th,td {
   border: solid 1px;
   padding: 10px; 
+}
+
+.c-list-table {
+  border-collapse: collapse;
+  background-color: #fff;
+  width: 95%;
+}
+
+.every-day {
+  background-color: #ffe9ff;
+  margin: 0 -6px;
+}
+.every-day:nth-child(1) {
+  background-color: #ffe9ff;
+}
+.every-day:nth-child(2) {
+  background-color: #e9fff4;
+}
+.every-day:nth-child(3) {
+  background-color: #ffede9;
+}
+.every-day:nth-child(4) {
+  background-color: #e9ecff;
+}
+.every-day:nth-child(5) {
+  background-color: #ffe9ef;
+}
+
+
+.schedule {
+  margin: 0 6px;
 }

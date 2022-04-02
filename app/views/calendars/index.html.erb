@@ -67,22 +67,22 @@
   <div class="schedule-list">List of future plans
 <br>
 
-  <%# <table class="table"> %>
-  <%# <thead class="thead-light"> %>
-    <%# <tr> %>
-      <%# <th>タイトル</th> %>
-      <%# <th>日程</th> %>
-    <%# </tr> %>
-  <%# </thead> %>
+<table class="c-list-table">
+  <thead>
+    <tr><th>Date</th><th>Title</th><th>Member</th></tr>
+  </thead>
+  <% @calendars.each do |calendar| %>
+  <tbody>
+    <tr>
+      <td><%= calendar.start_date %></td>
+      <td><%= link_to calendar.title, home_calendar_path(@home,calendar.id) %></td>
+      <td><%= calendar.member %></td>
+    </tr>
+  </tbody>
+  <% end %>
+</table>
 
-  <%# <tbody> %>
-    <% @calendars.each do |calendar| %>
-      <ul>
-        <li><%= calendar.start_date %> <%= link_to calendar.title, home_calendar_path(@home,calendar.id) %></li>
-      </ul>
-    <% end %>
-  <%# </tbody> %>
-<%# </table> %>
+
 </div>
 
 </div>
@@ -97,9 +97,19 @@
     <%= date.day %>
 
     <% calendars.each do |calendar| %>
-      <div>
-        <%= link_to calendar.title, home_calendar_path(@home,calendar.id) %>
-      </div>
+
+      <% if calendar.start_date != calendar.end_date %>
+        <div class="every-day">
+          <div class="schedule">
+          <%= link_to calendar.title, home_calendar_path(@home,calendar.id) %>
+          </div>
+        </div>
+      <% else %>
+        <div>
+          <%= link_to calendar.title, home_calendar_path(@home,calendar.id) %>
+        </div>
+      <% end %>
+
     <% end %>
   <% end %>
 </div>

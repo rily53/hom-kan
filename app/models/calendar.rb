@@ -14,6 +14,11 @@ class Calendar < ApplicationRecord
   def start_time
     self.start_date
     # カレンダーにイベント表示
+    
+  end
+
+  def end_time
+    self.end_date
   end
 
 end

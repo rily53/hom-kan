@@ -18,7 +18,6 @@ class CalendarsController < ApplicationController
 
   def create
     @calendar = @home.calendars.new(calendar_params)
-    # @calendar = current_user.calendar.new(calendar_params)
     # @calendar.home_id = params[:home_id]
     if @calendar.save
       redirect_to home_calendars_path(@home), notice:"completion"
