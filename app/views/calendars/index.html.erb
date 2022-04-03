@@ -5,6 +5,7 @@
   <h1 class="calendar-top">Calendar</h1>
 <br>
 
+
 <div class="row">
 
 <div class="col-md-4">
@@ -12,6 +13,9 @@
   <div class="form-wrapper-cl">
 
     <%= form_with model: [@home, @calendar], local: true do |form| %>
+
+    <div class="error-m"><%= render 'shared/error_messages', model: form.object %></div>
+    <%# |form|のform。form_withの内側でしか動かない。 %>
 
     <div class="c-title">
       <%= form.label :title, "Title*" %><br>
