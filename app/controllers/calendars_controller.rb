@@ -6,6 +6,8 @@ class CalendarsController < ApplicationController
     @calendars = @home.calendars.order(start_date: :ASC).limit(10)
     # home_idとcalendarテーブル一致データを昇順で取得 今後：並び順(本日〜)
     @calendar = current_user.calendars.new
+    @today = Date.current
+    # 本日の日付を取得して、今後の予定一覧へ渡す
   end
 
   def show

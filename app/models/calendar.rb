@@ -22,7 +22,9 @@ class Calendar < ApplicationRecord
   end
 
   def start_end_check
-    if start_date.present?
+    # 開始日が終了日より後に設定できない
+    if start_date.present? == end_date.present?
+    # dateに日付が入っている場合のみ
     errors.add(:end_date, "cannot be registered before start date") unless
     self.start_date < self.end_date
     end

@@ -78,9 +78,12 @@
   <% @calendars.each do |calendar| %>
   <tbody>
     <tr>
+      <% if calendar.start_date >= @today %>
+      <%# 今後の予定一覧のみ表示 %>
       <td><%= calendar.start_date %></td>
       <td><%= link_to calendar.title, home_calendar_path(@home,calendar.id) %></td>
       <td><%= calendar.member %></td>
+      <% end %>
     </tr>
   </tbody>
   <% end %>

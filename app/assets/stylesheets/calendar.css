@@ -76,7 +76,6 @@
 .future {}
 
 .start-date {
-  /* background-color: aquamarine; */
 }
 
 .prev-month {}
@@ -84,7 +83,6 @@
 .current-month {}
 
 .has-events {
-  /* background-color: aquamarine; */
 }
 
 .calendar-show, .calendar-edit {
@@ -120,25 +118,25 @@ th,td {
   width: 95%;
 }
 
-.every-day {
-  background-color: #ffe9ff;
-  margin: 0 -6px;
-}
-.every-day:nth-child(1) {
-  background-color: #ffe9ff;
-}
-.every-day:nth-child(2) {
-  background-color: #e9fff4;
-}
-.every-day:nth-child(3) {
-  background-color: #ffede9;
-}
-.every-day:nth-child(4) {
-  background-color: #e9ecff;
-}
-.every-day:nth-child(5) {
-  background-color: #ffe9ef;
-}
+/* .every-day { */
+  /* background-color: #ffe9ff; */
+  /* margin: 0 -6px; */
+/* } */
+/* .every-day:nth-child(1) { */
+  /* background-color: #ffe9ff; */
+/* } */
+/* .every-day:nth-child(2) { */
+  /* background-color: #e9fff4; */
+/* } */
+/* .every-day:nth-child(3) { */
+  /* background-color: #ffede9; */
+/* } */
+/* .every-day:nth-child(4) { */
+  /* background-color: #e9ecff; */
+/* } */
+/* .every-day:nth-child(5) { */
+  /* background-color: #ffe9ef; */
+/* } */
 
 
 .schedule {
