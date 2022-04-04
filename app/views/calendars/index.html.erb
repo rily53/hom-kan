@@ -68,13 +68,15 @@
   </div>
 
   
-  <div class="schedule-list">List of future plans
+  <div class="schedule-list">List of future plans（Last 7 cases）
 <br>
 
 <table class="c-list-table">
   <thead>
     <tr><th>Start date</th><th>Title</th><th>Member</th></tr>
   </thead>
+  <% count = 0 %>
+  <%# <% 最大7件表示用 %>
   <% @calendars.each do |calendar| %>
   <tbody>
     <tr>
@@ -83,6 +85,8 @@
       <td><%= calendar.start_date %></td>
       <td><%= link_to calendar.title, home_calendar_path(@home,calendar.id) %></td>
       <td><%= calendar.member %></td>
+      <% count += 1 %>
+      <% break if count == 7 %>
       <% end %>
     </tr>
   </tbody>
