@@ -15,5 +15,8 @@
   },
   "engines": {
     "node": "14.19.0"
+  },
+  "scripts": {
+    "setup": "yarn"
   }
 }
