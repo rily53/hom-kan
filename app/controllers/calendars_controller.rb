@@ -3,8 +3,11 @@ class CalendarsController < ApplicationController
   before_action :set_calendar_find, only: [:show, :edit, :update, :destroy]
 
   def index
-    @calendars = @home.calendars.order(start_date: :ASC).limit(10)
-    # home_idとcalendarテーブル一致データを昇順で取得 今後：並び順(本日〜)
+    @today = Date.current
+    # 本日の日付を取得して、今後の予定一覧へ渡す
+    @calendars = @home.calendars.order(start_date: :ASC)
+    # @calendars = @home.calendars.order(start_date: :ASC).limit(7)
+    # home_idとcalendarテーブル一致データを昇順で取得
     @calendar = current_user.calendars.new
   end
 
@@ -18,7 +21,6 @@ class CalendarsController < ApplicationController
 
   def create
     @calendar = @home.calendars.new(calendar_params)
-    # @calendar = current_user.calendar.new(calendar_params)
     # @calendar.home_id = params[:home_id]
     if @calendar.save
       redirect_to home_calendars_path(@home), notice:"completion"

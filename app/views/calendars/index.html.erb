@@ -5,6 +5,7 @@
   <h1 class="calendar-top">Calendar</h1>
 <br>
 
+
 <div class="row">
 
 <div class="col-md-4">
@@ -12,6 +13,9 @@
   <div class="form-wrapper-cl">
 
     <%= form_with model: [@home, @calendar], local: true do |form| %>
+
+    <div class="error-m"><%= render 'shared/error_messages', model: form.object %></div>
+    <%# |form|のform。form_withの内側でしか動かない。 %>
 
     <div class="c-title">
       <%= form.label :title, "Title*" %><br>
@@ -64,25 +68,32 @@
   </div>
 
   
-  <div class="schedule-list">List of future plans
+  <div class="schedule-list">List of future plans（Last 7 cases）
 <br>
 
-  <%# <table class="table"> %>
-  <%# <thead class="thead-light"> %>
-    <%# <tr> %>
-      <%# <th>タイトル</th> %>
-      <%# <th>日程</th> %>
-    <%# </tr> %>
-  <%# </thead> %>
+<table class="c-list-table">
+  <thead>
+    <tr><th>Start date</th><th>Title</th><th>Member</th></tr>
+  </thead>
+  <% count = 0 %>
+  <%# <% 最大7件表示用 %>
+  <% @calendars.each do |calendar| %>
+  <tbody>
+    <tr>
+      <% if calendar.start_date >= @today %>
+      <%# 今後の予定一覧のみ表示 %>
+      <td><%= calendar.start_date %></td>
+      <td><%= link_to calendar.title, home_calendar_path(@home,calendar.id) %></td>
+      <td><%= calendar.member %></td>
+      <% count += 1 %>
+      <% break if count == 7 %>
+      <% end %>
+    </tr>
+  </tbody>
+  <% end %>
+</table>
 
-  <%# <tbody> %>
-    <% @calendars.each do |calendar| %>
-      <ul>
-        <li><%= calendar.start_date %> <%= link_to calendar.title, home_calendar_path(@home,calendar.id) %></li>
-      </ul>
-    <% end %>
-  <%# </tbody> %>
-<%# </table> %>
+
 </div>
 
 </div>
@@ -97,9 +108,19 @@
     <%= date.day %>
 
     <% calendars.each do |calendar| %>
-      <div>
-        <%= link_to calendar.title, home_calendar_path(@home,calendar.id) %>
-      </div>
+
+      <% if calendar.start_date != calendar.end_date %>
+        <div class="every-day">
+          <div class="schedule">
+          <%= link_to calendar.title, home_calendar_path(@home,calendar.id) %>
+          </div>
+        </div>
+      <% else %>
+        <div>
+          <%= link_to calendar.title, home_calendar_path(@home,calendar.id) %>
+        </div>
+      <% end %>
+
     <% end %>
   <% end %>
 </div>
