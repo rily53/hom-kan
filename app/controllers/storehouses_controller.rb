@@ -2,11 +2,29 @@ class StorehousesController < ApplicationController
   before_action :set_home_find
 
   def index
+    # @storehouses = Storehouses.where(@home_id).all
+    @storehouse = current_user.storehouses.new
+  end
+
+  def new
+  end
+
+  def create
+    @storehouse = @home.storehouses.new(storehouse_params)
+    if @storehouse.save
+      redirect_to home_storehouses_path(@home), notice:"completion"
+    else
+      # @storehouses = Storehouses.where(@home_id).all
+      render :index
+    end
   end
 
 
-
   private
+
+  def storehouse_params
+    params.require(:storehouse).permit(:folder_name, :file_name, :file_memo).merge(user_id: current_user.id, home_id: params[:home_id])
+  end
 
   def set_home_find
     # @home = Home.find_by(id: params[:home_id])

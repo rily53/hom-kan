@@ -2,9 +2,37 @@
 
 <div class="sh-body">
 
-  <div class="sh-header">
-    <h1 class="sh-header__title">Storehouses</h1>
+<div class="sh-header">
+  <h1 class="sh-header-title">Storehouses</h1>
+
+  <div class="sh-form-wrapper">
+    <%= form_with model: [@home, @storehouse], local: true do |form| %>
+
+    <div class="c-title">
+      <%= form.label :folder_name, "Folder name*" %><br>
+      <%= form.text_field :folder_name, size: "35x10" %>
+    </div>
+
+    <div class="c-title">
+      <%= form.label :file_name, "File name*" %><br>
+      <%= form.text_field :file_name, size: "35x10" %>
+    </div>
+
+    <div class="c-title">
+      <%= form.label :file_memo, "File memo" %><br>
+      <%= form.text_area :file_memo, size: "34x10" %>
+    </div>
+
+    <br>
+    
+    <div class="submit">
+        <%= form.submit %>
+    </div>
+    <div>&emsp;* Required item</div>
+
+    <% end %>
   </div>
+</div>
 
   <div class="sh-cards">
 

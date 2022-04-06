@@ -10,8 +10,7 @@
 
 <div class="col-md-4">
 
-  <div class="form-wrapper-cl">
-
+  <div class="cl-form-wrapper">
     <%= form_with model: [@home, @calendar], local: true do |form| %>
 
     <div class="error-m"><%= render 'shared/error_messages', model: form.object %></div>
@@ -64,7 +63,6 @@
     <div>&emsp;* Required item</div>
 
     <% end %>
-
   </div>
 
   
