@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'storehouses/index'
   # get '/homes/room'
   root to: "homes#room"
   devise_for :users
