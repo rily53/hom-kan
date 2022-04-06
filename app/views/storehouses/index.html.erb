@@ -1,2 +1,35 @@
-<h1>Storehouses#index</h1>
-<p>Find me in app/views/storehouses/index.html.erb</p>
+<%= render "shared/header" %>
+
+<div class="sh-body">
+
+  <div class="sh-header">
+    <h1 class="sh-header__title">Storehouses</h1>
+  </div>
+
+  <div class="sh-cards">
+
+    <div class=" sh-card [ is-collapsed ] ">
+      <div class="sh-card__inner [ js-expander ]">
+        <span>Card</span>
+        <i class="sh-fa sh-fa-folder-o"></i>
+      </div>
+      <div class="sh-card__expander">
+        <i class="sh-fa sh-fa-close [ js-collapser ]"></i>
+        Expander
+      </div>
+    </div>
+
+    <div class=" sh-card [ is-collapsed ] ">
+      <div class="sh-card__inner [ js-expander ]">
+        <span>Card</span>
+        <i class="sh-fa sh-fa-folder-o"></i>
+      </div>
+      <div class="sh-card__expander">
+        <i class="sh-fa sh-fa-close [ js-collapser ]"></i>
+        Expander
+      </div>
+    </div>
+
+  </div>
+
+</div>
