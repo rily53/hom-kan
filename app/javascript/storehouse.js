@@ -3,7 +3,7 @@ var $cell = $('.sh-card');
 //open and close card when clicked on card
 $cell.find('.js-expander').click(function() {
 
-  var $thisCell = $(this).closest('.card');
+  var $thisCell = $(this).closest('.sh-card');
 
   if ($thisCell.hasClass('is-collapsed')) {
     $cell.not($thisCell).removeClass('is-expanded').addClass('is-collapsed').addClass('is-inactive');

@@ -2,62 +2,63 @@
 
 <div class="sh-body">
 
-<div class="sh-header">
-  <h1 class="sh-header-title">Storehouses</h1>
-
-  <div class="sh-form-wrapper">
-    <%= form_with model: [@home, @storehouse], local: true do |form| %>
-
-    <div class="c-title">
-      <%= form.label :folder_name, "Folder name*" %><br>
-      <%= form.text_field :folder_name, size: "35x10" %>
+  <div class="sh-header">
+    <h1 class="sh-header-title">Storehouses</h1>
+  
+    <div class="sh-form-wrapper">
+      <%= form_with model: [@home, @storehouse], local: true do |form| %>
+  
+      <div class="c-title">
+        <%= form.label :folder_name, "Folder name*" %><br>
+        <%= form.text_field :folder_name, size: "35x10" %>
+      </div>
+  
+      <div class="c-title">
+        <%= form.label :file_name, "File name*" %><br>
+        <%= form.text_field :file_name, size: "35x10" %>
+      </div>
+  
+      <div class="c-title">
+        <%= form.label :file_memo, "File memo" %><br>
+        <%= form.text_area :file_memo, size: "34x10" %>
+      </div>
+  
+      <br>
+      
+      <div class="submit">
+          <%= form.submit %>
+      </div>
+      <div>&emsp;* Required item</div>
+  
+      <% end %>
     </div>
-
-    <div class="c-title">
-      <%= form.label :file_name, "File name*" %><br>
-      <%= form.text_field :file_name, size: "35x10" %>
-    </div>
-
-    <div class="c-title">
-      <%= form.label :file_memo, "File memo" %><br>
-      <%= form.text_area :file_memo, size: "34x10" %>
-    </div>
-
-    <br>
-    
-    <div class="submit">
-        <%= form.submit %>
-    </div>
-    <div>&emsp;* Required item</div>
-
-    <% end %>
   </div>
-</div>
 
   <div class="sh-cards">
-
-    <div class=" sh-card [ is-collapsed ] ">
-      <div class="sh-card__inner [ js-expander ]">
-        <span>Card</span>
-        <i class="sh-fa sh-fa-folder-o"></i>
+    <%# <% @storehouses.each do |storehouse| %> %>
+  
+      <div class=" sh-card [ is-collapsed ] ">
+        <div class="sh-card__inner [ js-expander ]">
+          <%= "storehouse" %>
+          <i class="sh-fa sh-fa-folder-o"></i>
+        </div>
+        <div class="sh-card__expander">
+          <i class="sh-fa sh-fa-close [ js-collapser ]"></i>
+          Expander
+        </div>
       </div>
-      <div class="sh-card__expander">
-        <i class="sh-fa sh-fa-close [ js-collapser ]"></i>
-        Expander
+  
+      <div class=" sh-card [ is-collapsed ] ">
+        <div class="sh-card__inner [ js-expander ]">
+          <%= "storehouse" %>
+          <i class="sh-fa sh-fa-folder-o"></i>
+        </div>
+        <div class="sh-card__expander">
+          <i class="sh-fa sh-fa-close [ js-collapser ]"></i>
+          Expander
+        </div>
       </div>
-    </div>
-
-    <div class=" sh-card [ is-collapsed ] ">
-      <div class="sh-card__inner [ js-expander ]">
-        <span>Card</span>
-        <i class="sh-fa sh-fa-folder-o"></i>
-      </div>
-      <div class="sh-card__expander">
-        <i class="sh-fa sh-fa-close [ js-collapser ]"></i>
-        Expander
-      </div>
-    </div>
-
+    <%# <% end %> %>
   </div>
 
 </div>
