@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  # get 'storehouses/index'
   # get '/homes/room'
   root to: "homes#room"
   devise_for :users
@@ -6,6 +7,7 @@ Rails.application.routes.draw do
   resources :homes, only: [:index, :new, :create, :show] do
     resources :tasks, only: [:index, :new, :create]
     resources :calendars
+    resources :storehouses, only: [:index, :new, :create]
     collection do
       get 'room'
     end
