@@ -27,6 +27,7 @@ https://docs.google.com/spreadsheets/d/1IEPW0xlllfiEcg68vJW-rV9m6ZE4Z5_ifXg2_z00
 # 実装予定の機能
 
 # データベース設計
+[![Image from Gyazo](https://i.gyazo.com/93d88a8c658ff48b4999abe4436f97d9.png)](https://gyazo.com/93d88a8c658ff48b4999abe4436f97d9)
 
 # 画面遷移図
 
