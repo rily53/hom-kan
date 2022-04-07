@@ -83,14 +83,14 @@
   color: #eceef1;
   font-size: 1.5em;
 }
-.sh-card__expander .sh-fa {
+.sh-card__expander {
   font-size: 0.75em;
   position: absolute;
   top: 10px;
   right: 10px;
   cursor: pointer;
 }
-.sh-card__expander .sh-fa:hover {
+.sh-card__expander:hover {
   opacity: 0.9;
 }
 .sh-card.is-collapsed .sh-card__inner:after {
@@ -100,7 +100,7 @@
 .sh-card.is-collapsed .sh-card__expander {
   max-height: 0;
   min-height: 0;
-  overflow: hidden;
+  overflow: visible;
   margin-top: 0;
   opacity: 0;
 }
@@ -171,6 +171,25 @@
   .sh-card__expander {
     width: calc(200% + 30px);
   }
+}
+
+.sh-image {
+
+}
+.image-button {
+  /* display: block; */
+  background-color: #ffbfbf;
+  width: 250px;
+  height: 30px;
+  margin-top: 10px;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.image-form {
+  display: none;
 }
 
 

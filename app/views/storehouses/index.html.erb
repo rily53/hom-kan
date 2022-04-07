@@ -22,9 +22,12 @@
         <%= form.label :file_memo, "File memo" %><br>
         <%= form.text_area :file_memo, size: "34x10" %>
       </div>
-  
-      <br>
-      
+
+      <div class="sh-image" id="image">
+        <%= form.label :image, "Storehouse image", class: "image-button"  %><br />
+        <%= form.file_field :image, class: "image-form" %>
+      </div>
+
       <div class="submit">
           <%= form.submit %>
       </div>
@@ -35,11 +38,12 @@
   </div>
 
   <div class="sh-cards">
-    <%# <% @storehouses.each do |storehouse| %> %>
+    <%# <% @storehouses.each do |storehouse| %>
   
-      <div class=" sh-card [ is-collapsed ] ">
+      <div class="sh-card [ is-collapsed ] ">
         <div class="sh-card__inner [ js-expander ]">
-          <%= "storehouse" %>
+                <span>Card</span>
+          <%# <%= "storehouse" %>
           <i class="sh-fa sh-fa-folder-o"></i>
         </div>
         <div class="sh-card__expander">
@@ -50,7 +54,8 @@
   
       <div class=" sh-card [ is-collapsed ] ">
         <div class="sh-card__inner [ js-expander ]">
-          <%= "storehouse" %>
+                        <span>Card</span>
+          <%# <%= "storehouse" %>
           <i class="sh-fa sh-fa-folder-o"></i>
         </div>
         <div class="sh-card__expander">
@@ -58,7 +63,7 @@
           Expander
         </div>
       </div>
-    <%# <% end %> %>
+    <%# <% end %>
   </div>
 
 </div>

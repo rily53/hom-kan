@@ -2,7 +2,7 @@ class StorehousesController < ApplicationController
   before_action :set_home_find
 
   def index
-    # @storehouses = Storehouses.where(@home_id).all
+    @storehouses = Storehouse.where(@home_id).all
     @storehouse = current_user.storehouses.new
   end
 
@@ -23,7 +23,7 @@ class StorehousesController < ApplicationController
   private
 
   def storehouse_params
-    params.require(:storehouse).permit(:folder_name, :file_name, :file_memo).merge(user_id: current_user.id, home_id: params[:home_id])
+    params.require(:storehouse).permit(:folder_name, :file_name, :file_memo, :image).merge(user_id: current_user.id, home_id: params[:home_id])
   end
 
   def set_home_find

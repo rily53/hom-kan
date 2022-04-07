@@ -1,7 +1,7 @@
 var $cell = $('.sh-card');
 
 //open and close card when clicked on card
-$cell.find('.js-expander').click(function() {
+$cell.find('.js-expander').on('click', function() {
 
   var $thisCell = $(this).closest('.sh-card');
 
@@ -22,7 +22,7 @@ $cell.find('.js-expander').click(function() {
 });
 
 //close card when click on cross
-$cell.find('.js-collapser').click(function() {
+$cell.find('.js-collapser').on('click', function() {
 
   var $thisCell = $(this).closest('.sh-card');
 
