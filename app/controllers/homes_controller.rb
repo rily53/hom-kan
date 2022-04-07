@@ -1,5 +1,5 @@
 class HomesController < ApplicationController
-  
+  # before_action :set_home_find
 
   def index
     # @home = Home.find(params[:home_id])
@@ -40,6 +40,13 @@ class HomesController < ApplicationController
 
   def task_params
     params.require(:task).permit(:task, :deadline, :responsible_person, :status_id).merge(user_id: current_user.id, home_id: params[:home_id])
+  end
+
+  def set_home_find
+    # @home = Home.find_by(id: params[:home_id])
+    # 調べたコード
+    @home = Home.find(params[:home_id])
+    # Homeテーブルからhome_idカラムを取得 "id"のみだとエラー
   end
 
 end

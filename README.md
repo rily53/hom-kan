@@ -23,7 +23,9 @@ https://hom-kan.herokuapp.com/
 https://docs.google.com/spreadsheets/d/1IEPW0xlllfiEcg68vJW-rV9m6ZE4Z5_ifXg2_z00AJs/edit?usp=sharing
 
 # 実装した機能についての画像やGIFおよびその説明
-
+[![Image from Gyazo](https://i.gyazo.com/e445f26acfee04b6544c65965ae1b2da.png)](https://gyazo.com/e445f26acfee04b6544c65965ae1b2da)
+[![Image from Gyazo](https://i.gyazo.com/2f12f02d81b9e9200d87dbedc6755367.gif)](https://gyazo.com/2f12f02d81b9e9200d87dbedc6755367)
+[![Image from Gyazo](https://i.gyazo.com/e5955c18fefeca1e6baa76baac1cf0d2.gif)](https://gyazo.com/e5955c18fefeca1e6baa76baac1cf0d2)
 # 実装予定の機能
 
 # データベース設計
