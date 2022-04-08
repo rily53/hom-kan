@@ -21,7 +21,7 @@
   </div>
 
   <div class="header-title">
-    <% if @home.present? %>
+    <% if @home.id.present? %>
       <%= link_to "#{current_user.name}'s HOME ［#{@home.home_name}］", home_path(@home) %>
     <% else %>
       <%= "#{current_user.name}'s HOME" %>

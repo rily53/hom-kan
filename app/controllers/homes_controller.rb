@@ -11,12 +11,10 @@ class HomesController < ApplicationController
 
   def new
     @home = Home.new
-    # @home.users << current_user
   end
 
   def create
     @home = Home.new(home_params)
-    # @home.user_ids = current_user
     if @home.save
       redirect_to root_path
     else
