@@ -1,5 +1,5 @@
 class HomesController < ApplicationController
-  
+  before_action :authenticate_user!, only: [:new]
 
   def index
     # @home = Home.find(params[:home_id])
@@ -30,10 +30,16 @@ class HomesController < ApplicationController
     @tasks = Task.where(home_id: @home.id).all
   end
 
+  def room
+    @home = Home.find_by(id: params[:id])
+    # @home = Home.find(params[:home_id])
+  end
+
   private
 
   def home_params
     params.require(:home).permit(:home_name, { user_ids: []} )
+    # params.require(:home).permit(:home_name, user_ids: [] )
   end
 
   def task_params

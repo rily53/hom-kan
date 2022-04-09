@@ -174,8 +174,13 @@
 }
 
 .sh-image {
-
+  /* transition: 0.3s linear; */
 }
+.sh-image:hover {
+  /* background-color: #ffa0a0; */
+  /* transform: scale(1.05); */
+}
+
 .image-button {
   /* display: block; */
   background-color: #ffbfbf;
@@ -187,6 +192,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.3s linear;
+}
+.image-button:hover {
+  background-color: #ffa0a0;
+  width: 250px;
+  height: 30px;
 }
 .image-form {
   display: none;
