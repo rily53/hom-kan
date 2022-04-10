@@ -31,7 +31,7 @@ class HomesController < ApplicationController
   end
 
   def room
-    @home = Home.find_by(id: params[:id])
+    # @home = Home.find_by(id: params[:id])
     # @home = Home.find(params[:home_id])
   end
 
