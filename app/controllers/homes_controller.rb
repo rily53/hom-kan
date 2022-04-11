@@ -1,5 +1,6 @@
 class HomesController < ApplicationController
-  # before_action :set_home_find
+  before_action :authenticate_user!, only: [:new]
+
 
   def index
     # @home = Home.find(params[:home_id])
@@ -11,12 +12,10 @@ class HomesController < ApplicationController
 
   def new
     @home = Home.new
-    # @home.users << current_user
   end
 
   def create
     @home = Home.new(home_params)
-    # @home.user_ids = current_user
     if @home.save
       redirect_to root_path
     else
@@ -32,10 +31,16 @@ class HomesController < ApplicationController
     @tasks = Task.where(home_id: @home.id).all
   end
 
+  def room
+    # @home = Home.find_by(id: params[:id])
+    # @home = Home.find(params[:home_id])
+  end
+
   private
 
   def home_params
     params.require(:home).permit(:home_name, { user_ids: []} )
+    # params.require(:home).permit(:home_name, user_ids: [] )
   end
 
   def task_params
