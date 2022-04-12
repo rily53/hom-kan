@@ -49,7 +49,7 @@
   }
 }
 .sh-card:hover .sh-card__inner {
-  background-color: #1abc9c;
+  background-color: #f4b250;
   transform: scale(1.05);
 }
 .sh-card__inner {
@@ -105,7 +105,7 @@
   opacity: 0;
 }
 .sh-card.is-expanded .sh-card__inner {
-  background-color: #1abc9c;
+  background-color: #f4b250;
 }
 .sh-card.is-expanded .sh-card__inner:after {
   content: "";
