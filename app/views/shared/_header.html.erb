@@ -21,11 +21,11 @@
   </div>
 
   <div class="header-title">
-    <% if @home.present? %>
+    <%# <% if @home.present? %>
       <%= link_to "#{current_user.name}'s HOME ［#{@home.home_name}］", home_path(@home) %>
-    <% else %>
-      <%= "#{current_user.name}'s HOME" %>
-    <% end %>
+    <%# <% else %>
+      <%# <%= "#{current_user.name}'s HOME" %>
+    <%# <% end %>
   </div>
 
 
