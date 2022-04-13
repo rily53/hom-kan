@@ -214,6 +214,10 @@ form {
   font-size: 0.8em;
 }
 
+.error_explanation {
+  color: #b62d00;
+}
+
 /*
 Copyright (c) John Bowie @bowie
 Released under the MIT license
