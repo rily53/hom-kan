@@ -59,8 +59,9 @@ https://docs.google.com/spreadsheets/d/1IEPW0xlllfiEcg68vJW-rV9m6ZE4Z5_ifXg2_z00
 
 
 # 開発環境
+
 * HTML
 * CSS
-* Ruby
-* Ruby on Rails
+* Ruby（2.6.5）
+　（Ruby on Rails 6.0.0）
 * JavaScript
