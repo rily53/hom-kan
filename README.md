@@ -1,4 +1,6 @@
 # README
+※4月13日現在
+（heroku）データベースのリセットを掛けています。
 
 
 # アプリケーション名
@@ -62,6 +64,5 @@ https://docs.google.com/spreadsheets/d/1IEPW0xlllfiEcg68vJW-rV9m6ZE4Z5_ifXg2_z00
 
 * HTML
 * CSS
-* Ruby（2.6.5）
-　（Ruby on Rails 6.0.0）
+* Ruby 2.6.5 （Ruby on Rails 6.0.0）
 * JavaScript
