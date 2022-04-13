@@ -1,9 +1,7 @@
 class HomesController < ApplicationController
-  before_action :authenticate_user!, only: [:new]
-
 
   def index
-    # @home = Home.find(params[:home_id])
+    @homes = Home.find(params[:home_id])
     # group = Home.joins(:users)
     # @home = group.find(params[:user_id])
     # @tasks = @home.tasks.includes(:user)
