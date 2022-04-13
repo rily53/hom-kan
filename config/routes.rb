@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     end
     resources :tasks, only: [:index, :new, :create]
     resources :calendars
-    resources :storehouses, only: [:index, :new, :create]
+    resources :storehouses, only: [:index, :new, :create, :show]
   end
 
 end

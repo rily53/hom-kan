@@ -25,7 +25,7 @@
 
       <div class="sh-image" id="image">
         <%= form.label :image, "Storehouse image", class: "image-button"  %><br />
-        <%= form.file_field :image, class: "image-form" %>
+        <%= form.file_field :images, multiple: true, class: "image-form" %>
       </div>
 
       <div class="submit">
