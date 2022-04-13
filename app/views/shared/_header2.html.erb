@@ -1,23 +1,23 @@
 <div class="home-header">
 
   <div class="browse">
-    <div class="pull-down">
-      <div class="categories" id="categories">
-        Category
-        <ul class="show-categories hidden" id="pull-down-ct">
-          <li class="pull-down-category">TASK</li>
-          <li class="pull-down-category">LIST</li>
-          <li class="pull-down-category">MEMO</li>
-        </ul>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
-        <path d="M6 9l6 6 6-6" /></svg>
-      </div>
-    </div>
+    <%# <div class="pull-down"> %>
+      <%# <div class="categories" id="categories"> %>
+        <%# Category %>
+        <%# <ul class="show-categories hidden" id="pull-down-ct"> %>
+          <%# <li class="pull-down-category">TASK</li> %>
+          <%# <li class="pull-down-category">LIST</li> %>
+          <%# <li class="pull-down-category">MEMO</li> %>
+        <%# </ul> %>
+        <%# <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"> %>
+        <%# <path d="M6 9l6 6 6-6" /></svg> %>
+      <%# </div> %>
+    <%# </div> %>
 
 
-    <div class="search-bar">
-      <input type="text" placeholder="Search" />
-    </div>
+    <%# <div class="search-bar"> %>
+      <%# <input type="text" placeholder="Search" /> %>
+    <%# </div> %>
   </div>
 
   <div class="header-title">
@@ -34,10 +34,7 @@
         Menu
         <ul class="show-menus hidden" id="pull-down-mn">
           <li class="pull-down-menu">
-            <%= link_to "Room slection", room_homes_path %></li>
-        <% if @home.present? %>
-          <li class="pull-down-menu">Room member</li>
-        <% end %>
+            <%= link_to "Home slection", room_homes_path %></li>
           <li class="pull-down-menu">My page</li>
           <li class="pull-down-menu">
             <%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
