@@ -19,11 +19,13 @@ class StorehousesController < ApplicationController
     end
   end
 
+  def show
+  end
 
   private
 
   def storehouse_params
-    params.require(:storehouse).permit(:folder_name, :file_name, :file_memo, :image).merge(user_id: current_user.id, home_id: params[:home_id])
+    params.require(:storehouse).permit(:folder_name, :file_name, :file_memo, images: []).merge(user_id: current_user.id, home_id: params[:home_id])
   end
 
   def set_home_find

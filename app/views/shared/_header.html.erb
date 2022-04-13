@@ -22,7 +22,6 @@
 
   <div class="header-title">
     <% if @home.present? %>
-    <%binding.pry%>
       <%= link_to "#{current_user.name}'s HOME ［#{@home.home_name}］", home_path(@home) %>
     <% else %>
       <%= "#{current_user.name}'s HOME" %>
