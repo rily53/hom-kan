@@ -15,9 +15,9 @@ class HomesController < ApplicationController
   def create
     @home = Home.new(home_params)
     if @home.save
-      redirect_to room_homes_path, notice: 'It has been saved'
+      redirect_to room_homes_path
     else
-      render :new, notice: 'Could not save'
+      render :new
     end
   end
 

@@ -23,7 +23,7 @@ class CalendarsController < ApplicationController
     @calendar = @home.calendars.new(calendar_params)
     # @calendar.home_id = params[:home_id]
     if @calendar.save
-      redirect_to home_calendars_path(@home), notice:"completion"
+      redirect_to home_calendars_path(@home)
     else
       @calendars = @home.calendars.order(start_date: :ASC).limit(10)
       render :index
