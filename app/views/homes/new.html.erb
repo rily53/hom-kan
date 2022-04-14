@@ -2,36 +2,32 @@
 
 <div class="form-main">
   <div class="form-wrapper-hn">
-    <h1>New HOME</h1>
+    <h1>New ROOM</h1>
 
-  <%= form_with model: @home, locl: true do |f| %>
+  <%# <%= form_with model: @home, locl: true do |f| %> %>
+  <%= form_with model: @home do |f| %>
 
     <%= render 'shared/error_messages', model: f.object %>
 
     <div class="form-item">
-      <%= f.label :home_name, "HOME Name" %>
+      <%= f.label :home_name, "ROOM Name" %>
         <div class="attention">
           <%= "Please set at least 5 characters including letters and numbers, and within 20 characters." %>
         </div>
       <%= f.text_field :home_name, autofocus: true %>
     </div>
 
-    <select name="home[user_ids][]">
-      <option>User selection</option>
-      <% User.where.not(id: current_user.id).each do |user| %>
-        <option value=<%= user.id %>><%= user.name %></option>
-      <% end %>
-    </select>
+<%# 一旦メモへ移動 %>
     <input name="home[user_ids][]" type="hidden" value=<%= current_user.id %>>
 
     <div class="button-panel-hn">
-      <%= f.submit "Enter the home", class: "button-hn" %>
+      <%= f.submit "Enter the room", class: "button-hn" %>
     </div>
 
 <% end %>
 
 <div class="go-link">
-  <%= link_to "HOME slection?", room_homes_path %>
+  <%= link_to "ROOM Slection?", room_homes_path %>
 </div>
 
 </div>

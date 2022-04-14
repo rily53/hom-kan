@@ -37,11 +37,13 @@
         Menu
         <ul class="show-menus hidden" id="pull-down-mn">
           <li class="pull-down-menu">
-            <%= link_to "Home slection", room_homes_path %></li>
+            <%= link_to "Room slection", room_homes_path %></li>
         <% if @home.present? %>
-          <li class="pull-down-menu">Home member</li>
+          <li class="pull-down-menu">Rome member</li>
         <% end %>
-          <li class="pull-down-menu">My page</li>
+          <%# <li class="pull-down-menu">My page</li> %>
+          <li class="pull-down-menu">
+            <%= link_to "My page(test:rootpath)", root_path %></li>
           <li class="pull-down-menu">
             <%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
         </ul>
