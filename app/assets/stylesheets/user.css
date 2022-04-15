@@ -38,11 +38,11 @@ body {
 .form-wrapper {
   background: #fafafa;
   margin: 3em auto;
-  padding: 0 1em;
+  padding: 0.5em 1em;
   max-width: 370px;
 }
 
-.form-wrapper-hn {
+.form-wrapper-rn {
   background: #fafafa;
   margin: 3em auto;
   padding: 15px 1em 25px 1em;
@@ -132,7 +132,7 @@ form {
   background: #ee3e52;
 }
 
-.button-hn {
+.button-rn {
   background: #62b8f1;
   border: none;
   color: #fff;
@@ -148,7 +148,7 @@ form {
   margin: 10px 0 0 0;
 }
 
-.button-hn:hover {
+.button-rn:hover {
   background: #4985f3;
 }
 
@@ -207,8 +207,7 @@ form {
   color: #8c8c8c;
   font-size: 0.7em;
   text-align: center;
-  padding: 7px;
-  margin-top: 10px;
+  padding: 10px;
 }
 
 .attention {

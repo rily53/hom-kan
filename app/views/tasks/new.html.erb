@@ -1,7 +1,7 @@
 <%= render "shared/header" %>
 
 <div class="form-main">
-  <div class="form-wrapper-hn">
+  <div class="form-wrapper-rn">
     <h1>New Task</h1>
 
   <%= form_with model: [@home, @task], local: true do |f| %>
@@ -40,8 +40,8 @@
 
     <input name="task[status_id]" type="hidden" value="1">
 
-    <div class="button-panel-hn">
-      <%= f.submit "Post", class: "button-hn" %>
+    <div class="button-panel-rn">
+      <%= f.submit "Post", class: "button-rn" %>
     </div>
 
 <% end %>

@@ -1,7 +1,7 @@
 <%= render "shared/header2" %>
 
 <div class="form-main">
-  <div class="form-wrapper-hn">
+  <div class="form-wrapper-rn">
     <h1>New ROOM</h1>
 
   <%= form_with model: @home, local: true do |f| %>
@@ -19,8 +19,8 @@
 <%# 一旦メモへ移動 %>
     <input name="home[user_ids][]" type="hidden" value=<%= current_user.id %>>
 
-    <div class="button-panel-hn">
-      <%= f.submit "Enter the room", class: "button-hn" %>
+    <div class="button-panel-rn">
+      <%= f.submit "Enter the room", class: "button-rn" %>
     </div>
 
 <% end %>
