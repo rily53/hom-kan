@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # get '/homes/room'
   devise_for :users
   root to: "homes#room"
-  resources :users, only: [:new, :create, :show, :edit, :update],
+  resources :users, only: [:new, :create, :show, :edit, :update, :destroy],
     controllers: { invitations: 'users/invitations'}
   # get '/homes/new', to: 'homes#new'
   resources :homes, only: [:index, :new, :create, :show] do
