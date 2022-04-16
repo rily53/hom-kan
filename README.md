@@ -53,6 +53,7 @@ https://docs.google.com/spreadsheets/d/1IEPW0xlllfiEcg68vJW-rV9m6ZE4Z5_ifXg2_z00
 
 # 実装予定の機能
 （2022年4月17日現在）  
+※ビューが整っていないページもございます。  
 * ホーム管理機能  
 追加予定：ルームへの招待 他
 * タスク管理機能  
