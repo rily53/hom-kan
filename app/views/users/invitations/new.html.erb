@@ -1,16 +1,41 @@
-<h2><%= t "devise.invitations.new.header" %></h2>
+<%= render "shared/header2" %>
 
-<%= form_for(resource, as: resource_name, url: invitation_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<div class="form-main">
+  <div class="form-wrapper">
+  <h1 class="page-title">Send invitation</h1>
 
-  <% resource.class.invite_key_fields.each do |field| -%>
-    <div class="field">
-      <%= f.label field %><br />
-      <%= f.text_field field %>
+  <br>
+
+
+    <%= form_for(resource, as: resource_name, url: invitation_path(resource_name), html: { method: :post }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="select-room">
+    <select name="user[home_ids][]">
+      <option>Room selection</option>
+      <% current_user.homes.each do |home| %>
+        <option value=<%= home.id %>><%= home.home_name %></option>
+      <% end %>
+    </select>
     </div>
-  <% end -%>
 
-  <div class="actions">
-    <%= f.submit t("devise.invitations.new.submit_button") %>
+    <% resource.class.invite_key_fields.each do |field| -%>
+      <div class="form-item">
+        <%= f.label field %><br />
+        <%= f.text_field field %>
+      </div>
+    <% end -%>
+
+
+    <div class="button-panel">
+      <%= f.submit t("devise.invitations.new.submit_button"), class: "button" %>
+    </div>
+
+    <% end %>
+
+    <div class="go-link">
+      <%= link_to "Room slection?", room_homes_path %><br>
+    </div>
+
   </div>
-<% end %>
+</div>
