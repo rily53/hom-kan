@@ -62,6 +62,10 @@ h1 {
   text-align: center;
   padding: 1em 0;
 }
+.page-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
 
 form {
   padding: 0 1.5em;
@@ -216,6 +220,16 @@ form {
 
 .error_explanation {
   color: #b62d00;
+}
+
+.select-room {
+  display: flex;
+  justify-content: center;
+  margin: 5px;
+}
+
+select{
+  width: 80%;
 }
 
 /*
