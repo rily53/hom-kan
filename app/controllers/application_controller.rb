@@ -13,7 +13,9 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
-    # :inviteと:accept_invitationに:usernameを許可する
+    # for(:invite)：招待メールの送信／for(:accept_invitation)：招待されたユーザーがアカウントを作成
+    # :inviteと:accept_invitationに:nameを許可する
+    # home_ids:[]でRoomへ招待（中間テーブルへ登録）
     devise_parameter_sanitizer.permit(:invite) { |u| u.permit(:email, :name, { home_ids: []}) }
     devise_parameter_sanitizer.permit(:accept_invitation) { |u| u.permit(:password, :password_confirmation, :invitation_token, :name) }
   end
