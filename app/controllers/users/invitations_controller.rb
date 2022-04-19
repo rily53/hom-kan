@@ -1,46 +1,20 @@
 class Users::InvitationsController < Devise::InvitationsController
   def new
     super
-    # @user = User.find_by(email: params[:email])
   end
 
   def create
+    super
     # if User.exists?(email: invite_params[:email])
-    #   # @user.save
-    #   redirect_to room_homes_path
-    # else
-      super
-    # end
-    # @user = User.find_by(email: params[:email])
-    # if @user.save
-      # redirect_to room_homes_path
-    # else
-      # render :new
+    #   @user.save
+    #   # redirect_to room_homes_path
+    # # else
     # end
   end
 
   def edit
     super
   end
-
-  def update
-    super
-  end
-
-  def destroy
-    super
-  end
-
-
-  # private
-# 
-  # def registered
-    # if @user == @invite
-      # @user = User.invite!(:email => email) do |u|
-      # u.skip_invitation = true
-      # end
-    # end
-  # end
 
   # protected
 
