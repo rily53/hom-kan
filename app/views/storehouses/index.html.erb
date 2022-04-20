@@ -3,7 +3,7 @@
 <div class="sh-body">
 
   <div class="sh-header">
-    <h1 class="sh-header-title">Storehouses</h1>
+    <h1 class="page-title">Storehouses</h1>
   
     <div class="sh-form-wrapper">
       <%= form_with model: [@home, @storehouse], local: true do |form| %>
@@ -23,7 +23,7 @@
         <%= form.text_area :file_memo, size: "34x10" %>
       </div>
 
-      <div class="sh-image" id="image">
+      <div class="sh-image button-animation" id="image">
         <%= form.label :image, "Storehouse image", class: "image-button"  %><br />
         <%= form.file_field :images, multiple: true, class: "image-form" %>
       </div>
@@ -37,20 +37,14 @@
     </div>
   </div>
 
-  <div class="sh-cards">
-    <%# <% @storehouses.each do |storehouse| %>
+  <div class="sh-folders">
+    <% @storehouses.each do |storehouse| %>
   
-      <div class="sh-card [ is-collapsed ] ">
-        <div class="sh-card__inner [ js-expander ]">
-                <%# <span>Shelf</span> %>
-          <%= link_to "shelf", "#" %>
-          <i class="sh-fa sh-fa-folder-o"></i>
-        </div>
-        <div class="sh-card__expander">
-          <i class="sh-fa sh-fa-close [ js-collapser ]"></i>
-          Expander
-        </div>
-      </div>
+    <div class="sh-folder button-animation">
+      <%= link_to storehouse.folder_name, home_storehouse_path(@home,storehouse.id), class: "folder-name" %>
+    </div>
+
+    <% end %>
   
       <div class=" sh-card [ is-collapsed ] ">
         <div class="sh-card__inner [ js-expander ]">

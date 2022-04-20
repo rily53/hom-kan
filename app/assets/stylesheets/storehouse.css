@@ -1,4 +1,3 @@
-
 .sh-body {
   /* margin: 5em auto; */
   max-width: 100vw;
@@ -12,14 +11,6 @@
   align-items: center;
 }
 
-.sh-header-title {
-  margin: 0;
-  /* text-transform: uppercase; 大文字*/
-  line-height: 1.1;
-  font-size: 1.5rem;
-  font-weight: 600;
-}
-
 .sh-form-wrapper {
   background: #fafafa;
   margin: 0 10px;
@@ -27,11 +18,37 @@
   width: 370px;
 }
 
-.sh-cards {
+.sh-folders {
   padding: 15px;
   display: flex;
   flex-flow: row wrap;
 }
+
+.sh-folder {
+  background: #ffde9d;
+  color: #fff;
+  height: 100px;
+  width: calc((100% / 3) - 30px);
+  margin: 15px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2em;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* transition: all 0.2s ease-in-out; */
+}
+.sh-folder:hover {
+  background-color: #ffcd81;
+  /* transform: scale(1.05); */
+}
+.folder-name {
+  color: #fff;
+}
+
+
+
 
 .sh-card {
   margin: 15px;
@@ -192,20 +209,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: 0.3s linear;
+  /* transition: 0.3s linear; */
 }
 .image-button:hover {
   background-color: #ffa0a0;
-  width: 250px;
-  height: 30px;
+  /* width: 250px; */
+  /* height: 30px; */
 }
 .image-form {
   display: none;
 }
-
-
-/*
-Copyright (c) NAILA AHMA @nailaahmad
-Released under the MIT license
-http://opensource.org/licenses/mit-license.php
-*/
