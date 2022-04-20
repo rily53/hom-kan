@@ -1,9 +1,13 @@
 class StorehousesController < ApplicationController
   before_action :set_home_find
+  before_action :set_storehouse_find, only: [:show]
 
   def index
     @storehouses = Storehouse.where(@home_id).all
     @storehouse = current_user.storehouses.new
+  end
+
+  def show
   end
 
   def new
@@ -12,14 +16,11 @@ class StorehousesController < ApplicationController
   def create
     @storehouse = @home.storehouses.new(storehouse_params)
     if @storehouse.save
-      redirect_to home_storehouses_path(@home), notice:"completion"
+      redirect_to home_storehouses_path(@home)
     else
       # @storehouses = Storehouses.where(@home_id).all
       render :index
     end
-  end
-
-  def show
   end
 
   private
@@ -33,6 +34,10 @@ class StorehousesController < ApplicationController
     # 調べたコード
     @home = Home.find(params[:home_id])
     # Homeテーブルからhome_idカラムを取得 "id"のみだとエラー
+  end
+
+  def set_storehouse_find
+    @storehouse = Storehouse.find(params[:id])
   end
 
 end

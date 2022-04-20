@@ -25,7 +25,7 @@ class CalendarsController < ApplicationController
     if @calendar.save
       redirect_to home_calendars_path(@home)
     else
-      @calendars = @home.calendars.order(start_date: :ASC).limit(10)
+      @calendars = @home.calendars.order(start_date: :ASC)
       render :index
     end
   end
