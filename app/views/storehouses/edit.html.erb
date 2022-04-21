@@ -1,0 +1,36 @@
+<%= render "shared/header" %>
+
+<div class="edit-body">
+  <div class="form-wrapper-cl">
+
+  <%= form_with model: [@home, @storehouse], local: true do |form| %>
+
+    <div class="c-title">
+      <%= form.label :folder_name, "Folder name*" %><br>
+      <%= form.text_field :folder_name, size: "35x10" %>
+    </div>
+
+    <div class="c-title">
+      <%= form.label :file_name, "File name*" %><br>
+      <%= form.text_field :file_name, size: "35x10" %>
+    </div>
+
+    <div class="c-title">
+      <%= form.label :file_memo, "File memo" %><br>
+      <%= form.text_area :file_memo, size: "34x10" %>
+    </div>
+
+    <div class="sh-image button-animation" id="image">
+      <%= form.label :image, "Storehouse image", class: "image-button"  %><br />
+      <%= form.file_field :images, multiple: true, class: "image-form" %>
+    </div>
+
+    <div class="submit">
+        <%= form.submit %>
+    </div>
+    <div>&emsp;* Required item</div>
+  
+  <% end %>
+  
+  </div>
+</div>

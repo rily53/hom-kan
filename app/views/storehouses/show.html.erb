@@ -1,5 +1,34 @@
+<%= render "shared/header" %>
+
+<div class="show-body">
+
+<div class="show-menu">
+  <%= link_to 'edit', edit_home_storehouse_path(@home,@storehouse) %>
+  <%= link_to 'delete', home_storehouse_path(@home, @storehouse), method: :delete, data: { confirm: 'Is it really ok?' } %>
+  <%= link_to 'return', home_storehouse_path(@home) %>
+</div>
+
+<table>
+  <tbody>
+      <tr>
+      <th>Folder name</th>
+      <td><%= @storehouse.folder_name %></td>
+    </tr>
+    <tr>
+      <th>File name</th>
+      <td><%= @storehouse.file_name %></td>
+    </tr>
+    <tr>
+      <th>File memo</th>
+      <td><%= @storehouse.file_memo %></td>
+    </tr>
+  </tbody>
+</table>
+
 <% if @storehouse.image.attached? %>
   <% @storehouse.image.each do |image| %>
     <%= image_tag image.variant(resize: '500x500') %>
   <% end %>
 <% end %>
+
+</div>
