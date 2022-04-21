@@ -1,6 +1,6 @@
 class StorehousesController < ApplicationController
   before_action :set_home_find
-  before_action :set_storehouse_find, only: [:show]
+  before_action :set_storehouse_find, only: [:show, :edit, :update, :destroy]
 
   def index
     @storehouses = Storehouse.where(@home_id).all
@@ -21,6 +21,24 @@ class StorehousesController < ApplicationController
       # @storehouses = Storehouses.where(@home_id).all
       render :index
     end
+  end
+
+  def edit
+    redirect_to root_path unless current_user.id == @storehouse.user_id
+  end
+
+  def update
+    if @storehouse.update(storehouse_params)
+      redirect_to home_storehouses_path(@home)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    redirect_to root_path unless current_user.id == @storehouse.user_id
+    @storehouse.destroy
+    redirect_to home_storehouses_path(@home)
   end
 
   private
