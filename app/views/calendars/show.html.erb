@@ -1,11 +1,11 @@
 <%= render "shared/header" %>
 
-<div class="calendar-show">
+<div class="show-body">
 
 <div class="show-menu">
-<%= link_to 'edit', edit_home_calendar_path(@home,@calendar) %>
-<%= link_to 'delete', home_calendar_path(@home, @calendar), method: :delete, data: { confirm: 'Is it really ok?' } %>
-<%= link_to 'return', home_calendars_path(@home) %>
+  <%= link_to 'edit', edit_home_calendar_path(@home,@calendar) %>
+  <%= link_to 'delete', home_calendar_path(@home, @calendar), method: :delete, data: { confirm: 'Is it really ok?' } %>
+  <%= link_to 'return', home_calendars_path(@home) %>
 </div>
 
 <table>
