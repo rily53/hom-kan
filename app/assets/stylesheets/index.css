@@ -22,6 +22,15 @@ body {
   font-weight: 200;
 }
 
+.show-body, .edit-body {
+  background-color: #fff;
+  width: 100vw;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .button-animation {
   text-transform: uppercase;
   /* 全て大文字 */
@@ -29,6 +38,23 @@ body {
   /* 要素の2つの状態間の変化を定義 hover等を入れる */
 }
 
+table {
+  border-collapse: collapse;
+  /* セルの線を重ねる */
+  background-color: #ffffff;
+  width: 350px;
+}
+
+th {
+  font-weight: 600;
+  text-align: center;
+  background-color: rgb(231, 238, 255);
+}
+
+th,td {
+  border: solid 1px;
+  padding: 10px; 
+}
 
 
 /* Form Template
