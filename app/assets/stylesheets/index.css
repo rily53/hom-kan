@@ -69,6 +69,8 @@ body {
   font-family: 'Open Sans', sans-serif;
   color: #fff;
   font-size: 1.2rem;
+  text-transform: uppercase;
+  /* 全て大文字 */
   height: 50px;
   width: 100%;
   margin: 2rem 0 0;
@@ -76,14 +78,29 @@ body {
   letter-spacing: 0.05rem;
   text-align: center;
   cursor: pointer;
-}
-
-.button-animation {
-  text-transform: uppercase;
-  /* 全て大文字 */
   transition: background 0.3s ease-in-out;
   /* 要素の2つの状態間の変化を定義 hover等を入れる */
 }
+
+.button-r {
+  background: #f16272;
+}
+.button-r:hover {
+  background: #ee3e52;
+}
+
+.button-b {
+  background: #62b8f1;
+}
+.button-b:hover {
+  background: #4985f3;
+}
+
+.button-animation {
+  transition: background 0.3s ease-in-out;
+  /* 要素の2つの状態間の変化を定義 hover等を入れる */
+}
+
 
 /* table */
 table {
