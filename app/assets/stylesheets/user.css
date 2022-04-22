@@ -18,29 +18,6 @@
   text-align: center;
 }
 
-.form-wrapper {
-  background: #fafafa;
-  margin: 3em auto;
-  padding: 0.5em 1em;
-  max-width: 370px;
-}
-
-.form-wrapper-rn {
-  background: #fafafa;
-  margin: 3em auto;
-  padding: 15px 1em 25px 1em;
-  /* padding-bottom: 20px; */
-  max-width: 370px;
-}
-
-.form-wrapper-rs {
-  background: #fafafa;
-  margin: 3em auto;
-  padding: 100px;
-  /* padding-bottom: 20px; */
-  max-width: 370px;
-}
-
 h1 {
   text-align: center;
   padding: 1em 0;
