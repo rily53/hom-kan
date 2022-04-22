@@ -11,13 +11,6 @@
   align-items: center;
 }
 
-.sh-form-wrapper {
-  background: #fafafa;
-  margin: 0 10px;
-  padding: 30px;
-  width: 370px;
-}
-
 .sh-folders {
   padding: 15px;
   display: flex;

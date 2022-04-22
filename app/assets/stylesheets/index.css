@@ -56,6 +56,28 @@ body {
   /* リンクが無いバージョン */
 }
 
+.form-wrapper3 {
+  background: #fafafa;
+  max-width: 370px;
+  margin: 0 auto;
+  padding: 30px;
+  /* ログイン後バージョン */
+}
+
+/* button */
+.button-material {
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
+  font-size: 1.2rem;
+  height: 50px;
+  width: 100%;
+  margin: 2rem 0 0;
+  border: none;
+  letter-spacing: 0.05rem;
+  text-align: center;
+  cursor: pointer;
+}
+
 .button-animation {
   text-transform: uppercase;
   /* 全て大文字 */
@@ -63,6 +85,7 @@ body {
   /* 要素の2つの状態間の変化を定義 hover等を入れる */
 }
 
+/* table */
 table {
   border-collapse: collapse;
   /* セルの線を重ねる */
