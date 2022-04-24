@@ -105,20 +105,29 @@ body {
 /* table */
 table {
   border-collapse: collapse;
-  /* セルの線を重ねる */
-  background-color: #ffffff;
+  /* セルの境界線を重ねる */
+  background-color: #fff;
   width: 350px;
+  table-layout: fixed;
+}
+
+tr {
+  background-color: #cbecef;
+  /* padding: .35em; */
+  border: 2px solid #fff;
 }
 
 th {
+  background-color: #37b1c2;
+  color: #fff;
   font-weight: 600;
   text-align: center;
-  background-color: rgb(231, 238, 255);
 }
 
 th,td {
-  border: solid 1px;
   padding: 10px; 
+  border: solid 1px;
+  border-right: 2px solid #fff;
 }
 
 
