@@ -41,6 +41,43 @@
 }
 
 
+/* 詳細ページ */
+.sh-show-title{
+  background-color: #fafafa;
+  font-size: 1.3rem;
+  font-weight: 700;
+
+}
+
+.sh-show-body {
+  background-color: #fafafa;
+  height: 100vh;
+  width: 100vw;
+  padding: 10px;
+  /* display: flex; */
+  /* justify-content: space-between; */
+  /* flex-direction: column; */
+  /* align-items: center; */
+}
+
+.sh-show {
+  background: #fff;
+  max-width: 400px;
+  margin: 10px auto;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sh-images {
+  display: flex;
+  justify-content: space-around;
+}
+.sh-image {
+  margin: 10px 10px 0 0;
+}
+
 
 
 .sh-card {
