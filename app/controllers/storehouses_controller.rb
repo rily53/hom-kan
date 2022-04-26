@@ -8,6 +8,7 @@ class StorehousesController < ApplicationController
   end
 
   def show
+    @storehouses = Storehouse.where(folder_name: params[:folder_name])
   end
 
   def new
