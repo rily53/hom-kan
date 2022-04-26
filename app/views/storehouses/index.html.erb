@@ -40,9 +40,10 @@
   <div class="sh-folders">
     <% @storehouses.each do |storehouse| %>
   
-    <div class="sh-folder button-animation">
-      <%= link_to storehouse.folder_name, home_storehouse_path(@home,storehouse.id), class: "folder-name" %>
-    </div>
+      <%= link_to storehouse.folder_name, home_storehouse_path(@home,storehouse.id),{ class: "folder-name sh-folder button-animation" } %>
+    <%# <div class="sh-folder button-animation"> %>
+      <%# <%= link_to storehouse.folder_name, home_storehouse_path(@home,storehouse.id), class: "folder-name" %> %>
+    <%# </div> %>
 
     <% end %>
   

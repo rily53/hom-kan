@@ -42,8 +42,13 @@
 
 
 /* 詳細ページ */
-.sh-show-title{
+.sh-show-header{
   background-color: #fafafa;
+  display: flex;
+  justify-content: center;
+}
+.sh-show-title{
+  /* background-color: #fafafa; */
   font-size: 1.3rem;
   font-weight: 700;
 
