@@ -4,6 +4,8 @@ class StorehousesController < ApplicationController
 
   def index
     @storehouses = Storehouse.where(@home_id).all
+    # if @storehouses.folder_name==
+    # end
     @storehouse = current_user.storehouses.new
   end
 
