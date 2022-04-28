@@ -78,9 +78,12 @@
 .sh-images {
   display: flex;
   justify-content: space-around;
+  /* 左右均等 */
+  flex-wrap:  wrap;
+  /* 折返し */
 }
 .sh-image {
-  margin: 10px 10px 0 0;
+  margin: 10px 0 0 0;
 }
 
 
