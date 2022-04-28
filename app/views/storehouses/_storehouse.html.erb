@@ -1,0 +1,31 @@
+<div class="sh-show">
+
+  <div class="show-menu">
+    <%= link_to 'edit', edit_home_storehouse_path(@home,@storehouse) %>
+    <%= link_to 'delete', home_storehouse_path(@home, @storehouse), method: :delete, data: { confirm: 'Is it really ok?' } %>
+    <%= link_to 'return', home_storehouses_path(@home) %>
+  </div>
+
+
+  <table>
+    <tbody>
+      <tr>
+        <th>File name</th>
+        <td><%= @storehouse.file_name %></td>
+      </tr>
+      <tr>
+        <th>File memo</th>
+        <td><%= @storehouse.file_memo %></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="sh-images">
+      <% if @storehouse.images.attached? %>
+        <% @storehouse.images.each do |image| %>
+          <%= image_tag image.variant(resize_to_limit: [100, 100]), class: "sh-image" %>
+        <% end %>
+      <% end %>
+  </div>
+
+</div>
