@@ -1,6 +1,7 @@
 class StorehousesController < ApplicationController
   before_action :set_home_find
-  before_action :set_storehouse_find, only: [:show, :edit, :update, :destroy]
+  # before_action :set_storehouse_find, only: [:show, :edit, :update, :destroy]
+  before_action :set_storehouse_find, only: [:edit, :update, :destroy]
 
   def index
     @storehouses = Storehouse.where(@home_id).all
@@ -11,6 +12,7 @@ class StorehousesController < ApplicationController
 
   def show
     @storehouses = Storehouse.where(folder_name: params[:folder_name])
+    # @storehouses = @storehouse.folder_name
   end
 
   def new
