@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_13_082410) do
+ActiveRecord::Schema.define(version: 2022_05_01_153320) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -64,10 +64,21 @@ ActiveRecord::Schema.define(version: 2022_04_13_082410) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "storehouses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "folder_name", null: false
+  create_table "shelves", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "file_name", null: false
     t.text "file_memo"
+    t.bigint "user_id", null: false
+    t.bigint "home_id", null: false
+    t.bigint "storehouse_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["home_id"], name: "index_shelves_on_home_id"
+    t.index ["storehouse_id"], name: "index_shelves_on_storehouse_id"
+    t.index ["user_id"], name: "index_shelves_on_user_id"
+  end
+
+  create_table "storehouses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "folder_name", null: false
     t.bigint "user_id", null: false
     t.bigint "home_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -116,6 +127,9 @@ ActiveRecord::Schema.define(version: 2022_04_13_082410) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "calendars", "homes"
   add_foreign_key "calendars", "users"
+  add_foreign_key "shelves", "homes"
+  add_foreign_key "shelves", "storehouses"
+  add_foreign_key "shelves", "users"
   add_foreign_key "storehouses", "homes"
   add_foreign_key "storehouses", "users"
   add_foreign_key "tasks", "homes"
